@@ -136,16 +136,16 @@ public class ObjectBehavior : MonoBehaviour {
             if(oggettiGOArchiviati[0].transform.name.Contains("Gigante") && IsBeingCompressed)
             {
                 Oggetto thisOggetto = gameManager.GetComponent<LevelGeneration>().GetRoomByName(gameObject.transform.parent.name).oggetti.Find(x => x.nomeOggetto.Contains(gameObject.transform.name) && x.IsActive);
-                if (oggettiGOArchiviati[0].transform.name.Contains("chiave"))
+               /* if (oggettiGOArchiviati[0].transform.name.Contains("chiave"))
                     thisOggetto.nomeOggetto = thisOggetto.nomeOggetto.Replace(thisOggetto.nomeOggetto, "chiave");
-                else
-                thisOggetto.nomeOggetto = thisOggetto.nomeOggetto.Replace(".tar.gz", "");
+                else*/
+                    thisOggetto.nomeOggetto = thisOggetto.nomeOggetto.Replace(".tar.gz", "");
                 thisOggetto.IsMovable = true;
                 thisOggetto.IsTar = false;
                 thisOggetto.IsRenamable = true;
-                if (oggettiGOArchiviati[0].transform.name.Contains("chiave"))
+                /*if (oggettiGOArchiviati[0].transform.name.Contains("chiave"))
                     gameObject.transform.name = gameObject.transform.name.Replace(gameObject.transform.name, "chiave");
-                else
+                else*/
                     gameObject.transform.name = gameObject.transform.name.Replace(".tar.gz", "");
                 oggettiGOArchiviati.Remove(oggettiGOArchiviati[0]);
             }

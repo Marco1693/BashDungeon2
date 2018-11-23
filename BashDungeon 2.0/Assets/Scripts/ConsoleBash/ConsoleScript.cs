@@ -303,7 +303,7 @@ public class ConsoleScript : MonoBehaviour
         Oggetto oggetto = new Oggetto(playerGO.GetComponent<PlayerMovement>().currentRoom, nomeOggetto);
         playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Add(oggetto);
         if ((oggettiContenuti.Count == 3 && oggettiContenuti.FindAll(x => x.transform.name.Contains("pezzoChiave")).Count == 3) ||
-            oggettiContenuti[0].transform.name.Contains("Gigante"))
+            oggettiContenuti[0].transform.name.Contains("Gigante"))//Gigante fix tar
         {
             selectedPrefab = gameManager.GetComponent<ObjectPrefabSelector>().PickObjectPrefab("chiave");
         }
@@ -495,10 +495,10 @@ public class ConsoleScript : MonoBehaviour
     {
         if (splittedMessage.Length == 3)
         {
-
             if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == splittedMessage[1]))
             {
-                if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]).IsMovable)
+                if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]).IsMovable
+                    && splittedMessage[2].Contains("/"))
                 {
                     if ((splittedMessage[2] == "/"))
                     {
@@ -547,28 +547,55 @@ public class ConsoleScript : MonoBehaviour
                         selectedObj.transform.parent = GameObject.Find("/" + path[path.Length - 1]).transform;
                         selectedObj.transform.localPosition = oldLocalPos;
                         selectedObj.name = selectedOggetto.nomeOggetto;
-
                     }
                     else
                     {
-                        if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]).IsRenamable)
+                        /*//20/11 rinomina archivio
+                        if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]).IsRenamable
+                           && !splittedMessage[2].Contains("/"))
                         {
-                            Oggetto selectedObject;
-                            selectedObject = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]);
+                            if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[2]).IsActive)
+                                textObj.text += (splittedMessage[2] + "esiste già, scegliere un altro nome");
+                            else
+                            {
+                                GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]).name = splittedMessage[2];
+                                playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]).nomeOggetto = splittedMessage[2];
+                            }
                         }
-                        textObj.text += (splittedMessage[2] + " non è un path corretto." + "\n");
+                        else
+                            if (splittedMessage[2].Contains("/"))*/
+                            textObj.text += (splittedMessage[2] + " non è un path corretto." + "\n");
+                       /*else
+                            textObj.text += (splittedMessage[1] + " non è rinominabile");*/
                     }
                 }
                 else
                 {
-                    textObj.text += (splittedMessage[1] + " non è spostabile." + "\n");
+                    if(splittedMessage[2].Contains("/"))
+                        textObj.text += (splittedMessage[1] + " non è spostabile." + "\n");
                 }
-            }
 
+            }
             else
             {
                 textObj.text += ("Non è presente nessun oggetto col nome di " + splittedMessage[1] + " in questa stanza :o\n");
             }
+            //rinomina 21/11
+            if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == splittedMessage[1]))
+                if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]).IsRenamable
+                    && !splittedMessage[2].Contains("/"))
+                {
+                    if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == splittedMessage[2]))
+                        textObj.text += (splittedMessage[2] + " esiste già, scegliere un altro nome\n");
+                    else
+                    {
+                        GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]).name = splittedMessage[2];
+                        playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]).nomeOggetto = splittedMessage[2];
+                    }
+                }
+                else
+                    if(!splittedMessage[2].Contains("/"))
+                        textObj.text += (splittedMessage[1] + " non è rinominabile." + "\n");
 
         }
         else
