@@ -876,32 +876,33 @@ public class ConsoleScript : MonoBehaviour
             //se l'oggetto da copiare esiste nella stanza in cui mi trovo
             if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == splittedMessage[1]))
             {
-                //copiare in nella dir corrente
+                //copiare nella dir corrente
                 if (splittedMessage[2] ==".")
                 {
-                    /*
                     GameObject selectedObj;
                     GameObject clone;
                     Vector3 oldLocalPos;
                     Oggetto selectedOggetto;
 
+
                     selectedObj = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]);
                     oldLocalPos = selectedObj.transform.localPosition;
                     Instantiate(selectedObj);
+
                     clone = GameObject.Find(splittedMessage[1] + "(Clone)");
-                    clone.transform.parent = GameObject.Find("/" + splittedMessage[2]).transform;
+                    clone.transform.parent = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza).transform;
                     selectedOggetto = new Oggetto(playerGO.GetComponent<PlayerMovement>().currentRoom, clone.name);
+
                     //selectedOggetto = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]+"(Clone");
                     if (selectedObj == gameManager.GetComponent<PlayManager>().ClickedObject)
                     {
                         gameManager.GetComponent<PlayManager>().ClickedObject = null;
                     }
-                    gameManager.GetComponent<LevelGeneration>().GetRoomByName(splittedMessage[2]).oggetti.Add(selectedOggetto); // lo aggiungo tra gli oggetti della nuova stanza
+                    playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Add(selectedOggetto); // lo aggiungo tra gli oggetti della nuova stanza
 
-
-                    clone.transform.localPosition = oldLocalPos + new Vector3(5, 0, 0);
-                    clone.name = selectedOggetto.nomeOggetto;*/
-
+                    clone.transform.localPosition = oldLocalPos + new Vector3(3, 0, 0);
+                    clone.name = selectedOggetto.nomeOggetto + selectedOggetto.numCloni;
+                    selectedOggetto.numCloni++;
                 }
                 //se la destinazione è la root
                 else if (splittedMessage[2] == "/")
@@ -927,7 +928,7 @@ public class ConsoleScript : MonoBehaviour
                     }
                     gameManager.GetComponent<LevelGeneration>().GetRoomByName(splittedMessage[2]).oggetti.Add(selectedOggetto); // lo aggiungo tra gli oggetti della nuova stanza
 
-                    clone.transform.localPosition = oldLocalPos+ new Vector3(5,0,0);
+                    clone.transform.localPosition = oldLocalPos+ new Vector3(3,0,0);
                     clone.name = selectedOggetto.nomeOggetto + selectedOggetto.numCloni;
                     selectedOggetto.numCloni++;
                     
