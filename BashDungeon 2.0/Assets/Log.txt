@@ -683,3 +683,282 @@ BASH DUGEON - LOGS
 
 BASH DUGEON - LOGS
 
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+11/26/2018 10:19:25 AM - quest added - "Elimina le trappole ..."
+11/26/2018 10:20:03 AM - quest removed - "Elimina le trappole ..."
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+11/26/2018 1:10:57 PM - scroll read - "Affianca al comando ..."
+11/26/2018 1:13:36 PM - quest added - "Risolvi l'indovinell..."
+11/26/2018 1:14:17 PM - quest removed - "Risolvi l'indovinell..."
+
+
+BASH DUGEON - LOGS
+
+11/26/2018 1:31:39 PM - scroll read - "Se vuoi spostarti in..."
+11/26/2018 1:31:49 PM - scroll read - "Utilizza il comando ..."
+11/26/2018 1:32:12 PM - scroll read - "Puoi unire alcuni og..."
+11/26/2018 1:32:18 PM - scroll read - "Puoi separare gli og..."
+11/26/2018 1:32:40 PM - scroll read - "Per controllare se u..."
+11/26/2018 1:32:47 PM - scroll read - "Puoi controllare se ..."
+11/26/2018 1:33:11 PM - scroll read - "Puoi unire alcuni og..."
+11/26/2018 1:33:15 PM - scroll read - "Per rinominare un og..."
+11/26/2018 1:34:30 PM - scroll read - "Puoi separare gli og..."
+11/26/2018 1:36:18 PM - quest added - "Risolvi l'indovinell..."
+11/26/2018 1:36:35 PM - quest removed - "Risolvi l'indovinell..."
+11/26/2018 1:38:20 PM - quest added - "Elimina il barile ch..."
+11/26/2018 1:38:31 PM - quest removed - "Elimina il barile ch..."
+11/26/2018 1:39:46 PM - quest added - "Porta una chiave nel..."
+11/26/2018 1:41:43 PM - quest added - "Porta i tre cuccioli..."
+11/26/2018 1:53:03 PM - quest removed - "Porta i tre cuccioli..."
+11/26/2018 1:56:35 PM - quest removed - "Porta una chiave nel..."
+11/26/2018 1:58:42 PM - scroll read - "Per terminare il gio..."
+
+
+BASH DUGEON - LOGS
+
+11/27/2018 11:45:59 AM - quest added - "Porta i tre cuccioli..."
+11/27/2018 11:51:39 AM - quest added - "Risolvi l'indovinell..."
+11/27/2018 11:52:13 AM - quest removed - "Risolvi l'indovinell..."
+11/27/2018 11:53:31 AM - quest added - "Porta una chiave nel..."
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+

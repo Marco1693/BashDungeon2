@@ -21,6 +21,7 @@ public class ConsoleScript : MonoBehaviour
     List<string> oggettiLs = new List<string>();
     List<string> stanzeLs = new List<string>();
 
+
     //GameObject consoleCanvas;
 
     int righeMax = 25;
@@ -172,6 +173,10 @@ public class ConsoleScript : MonoBehaviour
 
             case "grep":
                 Grep(splittedMessage);
+                break;
+            //28/11
+            case "cp":
+                Cp(splittedMessage);
                 break;
 
             case "shutdown":
@@ -860,6 +865,94 @@ public class ConsoleScript : MonoBehaviour
             {
                 textObj.text += ("Uno o piu' oggetti non sono stati trovati\n");
             }
+        }
+    }
+
+    void Cp(String[] splittedMessage)
+    {
+        //se ha 2 parametri
+        if (splittedMessage.Length == 3)
+        {
+            //se l'oggetto da copiare esiste nella stanza in cui mi trovo
+            if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == splittedMessage[1]))
+            {
+                //copiare in nella dir corrente
+                if (splittedMessage[2] ==".")
+                {
+                    /*
+                    GameObject selectedObj;
+                    GameObject clone;
+                    Vector3 oldLocalPos;
+                    Oggetto selectedOggetto;
+
+                    selectedObj = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]);
+                    oldLocalPos = selectedObj.transform.localPosition;
+                    Instantiate(selectedObj);
+                    clone = GameObject.Find(splittedMessage[1] + "(Clone)");
+                    clone.transform.parent = GameObject.Find("/" + splittedMessage[2]).transform;
+                    selectedOggetto = new Oggetto(playerGO.GetComponent<PlayerMovement>().currentRoom, clone.name);
+                    //selectedOggetto = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]+"(Clone");
+                    if (selectedObj == gameManager.GetComponent<PlayManager>().ClickedObject)
+                    {
+                        gameManager.GetComponent<PlayManager>().ClickedObject = null;
+                    }
+                    gameManager.GetComponent<LevelGeneration>().GetRoomByName(splittedMessage[2]).oggetti.Add(selectedOggetto); // lo aggiungo tra gli oggetti della nuova stanza
+
+
+                    clone.transform.localPosition = oldLocalPos + new Vector3(5, 0, 0);
+                    clone.name = selectedOggetto.nomeOggetto;*/
+
+                }
+                //se la destinazione è la root
+                else if (splittedMessage[2] == "/")
+                {
+                    GameObject selectedObj;
+                    GameObject clone;
+                    Vector3 oldLocalPos;
+                    Oggetto selectedOggetto;
+          
+
+                    selectedObj = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]);
+                    oldLocalPos = selectedObj.transform.localPosition;
+                    Instantiate(selectedObj);
+                    
+                    clone = GameObject.Find(splittedMessage[1]+"(Clone)");
+                    clone.transform.parent = GameObject.Find("/" + splittedMessage[2]).transform;
+                    selectedOggetto = new Oggetto(gameManager.GetComponent<LevelGeneration>().GetRoomByName(splittedMessage[2]), clone.name);
+                    
+                    //selectedOggetto = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]+"(Clone");
+                    if (selectedObj == gameManager.GetComponent<PlayManager>().ClickedObject)
+                    {
+                        gameManager.GetComponent<PlayManager>().ClickedObject = null;
+                    }
+                    gameManager.GetComponent<LevelGeneration>().GetRoomByName(splittedMessage[2]).oggetti.Add(selectedOggetto); // lo aggiungo tra gli oggetti della nuova stanza
+
+                    clone.transform.localPosition = oldLocalPos+ new Vector3(5,0,0);
+                    clone.name = selectedOggetto.nomeOggetto + selectedOggetto.numCloni;
+                    selectedOggetto.numCloni++;
+                    
+                }
+                //se la destinazione esiste
+                else if (CheckPath(splittedMessage[2]))
+                {
+
+                }
+                //il path non esiste
+                else
+                {
+                    textObj.text +=(" \"") + (splittedMessage[2] + "\" non è un path corretto\n");
+                }
+            }
+            //l'oggetto non esiste
+            else
+            {
+                textObj.text += ("Non è presente alcun oggetto con il nome di \"" + splittedMessage[1] + "\" in questa stanza\n");
+            }
+        }
+        else
+        {
+            //ha bisogno di 2 parametri
+            textObj.text += ("cp prevede due parametri\n");
         }
     }
 

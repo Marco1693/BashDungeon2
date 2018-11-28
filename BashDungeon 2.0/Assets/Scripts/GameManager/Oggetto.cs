@@ -12,6 +12,7 @@ public class Oggetto
     string testoTxT;
     bool hasBeenRead = false;
     bool isActive = true;
+    int numeroCloni = 0;
 
     bool canCF = false, canXF = false, canZCF = false, canZXF = false;
 
@@ -250,6 +251,18 @@ public class Oggetto
         set
         {
             hasBeenRead = value;
+        }
+    }
+
+    public int numCloni
+    {
+        get
+        {
+            return numeroCloni;
+        }
+        set
+        {
+            numeroCloni = value;
         }
     }
 
