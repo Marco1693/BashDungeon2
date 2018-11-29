@@ -893,12 +893,11 @@ public class ConsoleScript : MonoBehaviour
                     clone.transform.parent = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza).transform;
                     selectedOggetto = new Oggetto(playerGO.GetComponent<PlayerMovement>().currentRoom, clone.name);
 
-                    //selectedOggetto = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]+"(Clone");
                     if (selectedObj == gameManager.GetComponent<PlayManager>().ClickedObject)
                     {
                         gameManager.GetComponent<PlayManager>().ClickedObject = null;
                     }
-                    playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Add(selectedOggetto); // lo aggiungo tra gli oggetti della nuova stanza
+                    playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Add(selectedOggetto);
 
                     clone.transform.localPosition = oldLocalPos + new Vector3(3, 0, 0);
                     clone.name = selectedOggetto.nomeOggetto + selectedOggetto.numCloni;
@@ -912,23 +911,28 @@ public class ConsoleScript : MonoBehaviour
                     Vector3 oldLocalPos;
                     Oggetto selectedOggetto;
           
-
+                    //trova il gameobject che si vuole copiare
                     selectedObj = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]);
                     oldLocalPos = selectedObj.transform.localPosition;
+                    //clona il gameobject
                     Instantiate(selectedObj);
-                    
+                    //trova il gameobject appena istanziato
                     clone = GameObject.Find(splittedMessage[1]+"(Clone)");
+                    //sposta il transform all'interno nella stanza specificata
                     clone.transform.parent = GameObject.Find("/" + splittedMessage[2]).transform;
+                    //nuovo Oggetto
                     selectedOggetto = new Oggetto(gameManager.GetComponent<LevelGeneration>().GetRoomByName(splittedMessage[2]), clone.name);
                     
-                    //selectedOggetto = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]+"(Clone");
                     if (selectedObj == gameManager.GetComponent<PlayManager>().ClickedObject)
                     {
                         gameManager.GetComponent<PlayManager>().ClickedObject = null;
                     }
-                    gameManager.GetComponent<LevelGeneration>().GetRoomByName(splittedMessage[2]).oggetti.Add(selectedOggetto); // lo aggiungo tra gli oggetti della nuova stanza
+                    //aggiunge il nuovo Oggetto nella room desiderata
+                    gameManager.GetComponent<LevelGeneration>().GetRoomByName(splittedMessage[2]).oggetti.Add(selectedOggetto); 
 
+                    //il clone viene spostato
                     clone.transform.localPosition = oldLocalPos+ new Vector3(3,0,0);
+                    //nuovo nome
                     clone.name = selectedOggetto.nomeOggetto + selectedOggetto.numCloni;
                     selectedOggetto.numCloni++;
                     
@@ -936,7 +940,36 @@ public class ConsoleScript : MonoBehaviour
                 //se la destinazione esiste
                 else if (CheckPath(splittedMessage[2]))
                 {
+                    GameObject selectedObj;
+                    GameObject clone;
+                    Vector3 oldLocalPos;
+                    Oggetto selectedOggetto;
+                    string[] path = splittedMessage[2].Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries); 
 
+                    //trova il gameobject che si vuole copiare
+                    selectedObj = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]);
+                    oldLocalPos = selectedObj.transform.localPosition;
+                    //clona il gameobject
+                    Instantiate(selectedObj);
+                    //trova il gameobject appena istanziato
+                    clone = GameObject.Find(splittedMessage[1] + "(Clone)");
+                    //sposta il transform all'interno nella stanza specificata
+                    clone.transform.parent = GameObject.Find("/" + path[path.Length - 1]).transform;
+                    //nuovo Oggetto
+                    selectedOggetto = new Oggetto(gameManager.GetComponent<LevelGeneration>().GetRoomByName(path[path.Length - 1]), clone.name);
+
+                    if (selectedObj == gameManager.GetComponent<PlayManager>().ClickedObject)
+                    {
+                        gameManager.GetComponent<PlayManager>().ClickedObject = null;
+                    }
+                    //aggiunge il nuovo Oggetto nella room desiderata
+                    gameManager.GetComponent<LevelGeneration>().GetRoomByName(path[path.Length - 1]).oggetti.Add(selectedOggetto);
+
+                    //il clone viene spostato
+                    clone.transform.localPosition = oldLocalPos + new Vector3(3, 0, 0);
+                    //nuovo nome
+                    clone.name = selectedOggetto.nomeOggetto + selectedOggetto.numCloni;
+                    selectedOggetto.numCloni++;
                 }
                 //il path non esiste
                 else
