@@ -8,7 +8,7 @@ public class Oggetto
 
     private Room currentRoom;
     public string nomeOggetto;
-    bool isTar, isZip, isInvisible, isMovable, isTxt, isRemovable, isNPC, isRenamable;
+    bool isTar, isZip, isInvisible, isMovable, isTxt, isRemovable, isNPC, isRenamable, isCopiable;
     string testoTxT;
     bool hasBeenRead = false;
     bool isActive = true;
@@ -58,6 +58,20 @@ public class Oggetto
         set
         {
             isRenamable = value;
+        }
+    }
+
+    //29/11
+    public bool IsCopiable
+    {
+        get
+        {
+            return isCopiable;
+        }
+
+        set
+        {
+            isCopiable = value;
         }
     }
 

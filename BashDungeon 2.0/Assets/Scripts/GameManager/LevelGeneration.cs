@@ -546,6 +546,10 @@ public class LevelGeneration : MonoBehaviour
                         item.IsInvisible = true;
                         child.name = item.nomeOggetto;
                     }
+                    if (child.name.Contains("barile"))
+                    {
+                        item.IsCopiable = true;
+                    }
                 }
 
             }

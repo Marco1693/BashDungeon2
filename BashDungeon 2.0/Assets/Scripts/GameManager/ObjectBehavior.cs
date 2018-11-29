@@ -139,14 +139,14 @@ public class ObjectBehavior : MonoBehaviour {
                /* if (oggettiGOArchiviati[0].transform.name.Contains("chiave"))
                     thisOggetto.nomeOggetto = thisOggetto.nomeOggetto.Replace(thisOggetto.nomeOggetto, "chiave");
                 else*/
-                    thisOggetto.nomeOggetto = thisOggetto.nomeOggetto.Replace(".tar.gz", "");
+                thisOggetto.nomeOggetto = thisOggetto.nomeOggetto.Replace(".tar.gz", "");
                 thisOggetto.IsMovable = true;
                 thisOggetto.IsTar = false;
                 thisOggetto.IsRenamable = true;
                 /*if (oggettiGOArchiviati[0].transform.name.Contains("chiave"))
                     gameObject.transform.name = gameObject.transform.name.Replace(gameObject.transform.name, "chiave");
                 else*/
-                    gameObject.transform.name = gameObject.transform.name.Replace(".tar.gz", "");
+                gameObject.transform.name = gameObject.transform.name.Replace(".tar.gz", "");
                 oggettiGOArchiviati.Remove(oggettiGOArchiviati[0]);
             }
         }
