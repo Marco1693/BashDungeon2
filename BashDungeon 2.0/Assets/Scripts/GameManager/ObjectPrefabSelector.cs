@@ -32,6 +32,8 @@ public class ObjectPrefabSelector : MonoBehaviour {
     public List<GameObject> level2Prefab;
     public List<GameObject> level3Prefab;
     public List<GameObject> level4Prefab;
+    //new lvl
+    public List<GameObject> level5Prefab;
 
 
     private bool isTrapLevelBeingSpawn = false; //We have 2 trap-level in both level 2 and 3 Prefabs. I want to spawn it only one time.
@@ -162,6 +164,11 @@ public class ObjectPrefabSelector : MonoBehaviour {
         else if (level == 4 && level4Prefab != null)
         {
             chosenPrefab = level4Prefab[Random.Range(0, level4Prefab.Count)];
+        }
+        // new lvl
+        else if (level == 5 && level5Prefab != null)
+        {
+            chosenPrefab = level5Prefab[Random.Range(0, level5Prefab.Count)];
         }
         else
         {

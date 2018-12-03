@@ -489,7 +489,7 @@ Prefab:
     - target: {fileID: 224954190049511054, guid: aacfba5b1b29b0b4dafe6420c7a4cc73,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -125
+      value: -125.00003
       objectReference: {fileID: 0}
     - target: {fileID: 114155505988633258, guid: aacfba5b1b29b0b4dafe6420c7a4cc73,
         type: 2}
@@ -1144,9 +1144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f288b11a4078a5040b0f6657b4b4e36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfRooms: 22
+  numberOfRooms: 25
   player: {fileID: 225269724}
   LootPrefabs:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -1456,6 +1457,7 @@ MonoBehaviour:
   - {fileID: 1976772957137708, guid: 3777d2cac626ede4e83be5aaada296c5, type: 2}
   - {fileID: 1976772957137708, guid: 3777d2cac626ede4e83be5aaada296c5, type: 2}
   - {fileID: 1976772957137708, guid: 3777d2cac626ede4e83be5aaada296c5, type: 2}
+  - {fileID: 1976772957137708, guid: 3777d2cac626ede4e83be5aaada296c5, type: 2}
   standardRoomPrefab:
   - {fileID: 1473213055824910, guid: 561f7aaddf5aed74fb5618bd1ee01c2f, type: 2}
   - {fileID: 1038480627017988, guid: f2df6bb8c27af3540be369979bc4040f, type: 2}
@@ -1470,6 +1472,8 @@ MonoBehaviour:
   - {fileID: 1747505630115082, guid: 7489c630af277934c82437829ff6206f, type: 2}
   level4Prefab:
   - {fileID: 1614953760434508, guid: a1acccfccbe3ec24ea7e27fac0b97af2, type: 2}
+  level5Prefab:
+  - {fileID: 1887311983996886, guid: a488f689837fb5347ac4ba7af72318db, type: 2}
 --- !u!114 &678893746
 MonoBehaviour:
   m_ObjectHideFlags: 0
