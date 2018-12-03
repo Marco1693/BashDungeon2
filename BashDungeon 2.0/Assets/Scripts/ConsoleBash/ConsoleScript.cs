@@ -885,13 +885,15 @@ public class ConsoleScript : MonoBehaviour
                         GameObject clone;
                         Vector3 oldLocalPos;
                         Oggetto selectedOggetto;
+                        Oggetto originalOggetto;
 
-
+                        originalOggetto = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]);
                         selectedObj = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]);
                         oldLocalPos = selectedObj.transform.localPosition;
                         Instantiate(selectedObj);
 
                         clone = GameObject.Find(splittedMessage[1] + "(Clone)");
+                        clone.name += originalOggetto.numCloni;
                         clone.transform.parent = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza).transform;
                         selectedOggetto = new Oggetto(playerGO.GetComponent<PlayerMovement>().currentRoom, clone.name);
 
@@ -901,9 +903,9 @@ public class ConsoleScript : MonoBehaviour
                         }
                         playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Add(selectedOggetto);
 
-                        clone.transform.localPosition = oldLocalPos + new Vector3(3, 0, 0);
-                        clone.name = selectedOggetto.nomeOggetto + selectedOggetto.numCloni;
-                        selectedOggetto.numCloni++;
+
+                        clone.transform.localPosition = oldLocalPos + new Vector3(originalOggetto.numCloni + 1, 0, 0);
+                        originalOggetto.numCloni += 1;
                     }
                     //se la destinazione è la root
                     else if (splittedMessage[2] == "/")
@@ -912,7 +914,10 @@ public class ConsoleScript : MonoBehaviour
                         GameObject clone;
                         Vector3 oldLocalPos;
                         Oggetto selectedOggetto;
+                        Oggetto originalOggetto;
 
+                        //trova l'Oggetto da copiare
+                        originalOggetto = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]);
                         //trova il gameobject che si vuole copiare
                         selectedObj = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]);
                         oldLocalPos = selectedObj.transform.localPosition;
@@ -920,6 +925,8 @@ public class ConsoleScript : MonoBehaviour
                         Instantiate(selectedObj);
                         //trova il gameobject appena istanziato
                         clone = GameObject.Find(splittedMessage[1] + "(Clone)");
+                        //aggiunta numero clone
+                        clone.name += originalOggetto.numCloni;
                         //sposta il transform all'interno nella stanza specificata
                         clone.transform.parent = GameObject.Find("/" + splittedMessage[2]).transform;
                         //nuovo Oggetto
@@ -933,10 +940,8 @@ public class ConsoleScript : MonoBehaviour
                         gameManager.GetComponent<LevelGeneration>().GetRoomByName(splittedMessage[2]).oggetti.Add(selectedOggetto);
 
                         //il clone viene spostato
-                        clone.transform.localPosition = oldLocalPos + new Vector3(3, 0, 0);
-                        //nuovo nome
-                        clone.name = selectedOggetto.nomeOggetto + selectedOggetto.numCloni;
-                        selectedOggetto.numCloni++;
+                        clone.transform.localPosition = oldLocalPos + new Vector3(originalOggetto.numCloni + 1, 0, 0);
+                        originalOggetto.numCloni++;
 
                     }
                     //se la destinazione esiste
@@ -947,7 +952,10 @@ public class ConsoleScript : MonoBehaviour
                         Vector3 oldLocalPos;
                         Oggetto selectedOggetto;
                         string[] path = splittedMessage[2].Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+                        Oggetto originalOggetto;
 
+                        //trova l'Oggetto da copiare
+                        originalOggetto = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]);
                         //trova il gameobject che si vuole copiare
                         selectedObj = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]);
                         oldLocalPos = selectedObj.transform.localPosition;
@@ -955,6 +963,8 @@ public class ConsoleScript : MonoBehaviour
                         Instantiate(selectedObj);
                         //trova il gameobject appena istanziato
                         clone = GameObject.Find(splittedMessage[1] + "(Clone)");
+                        //aggiunta numero clone
+                        clone.name += originalOggetto.numCloni;
                         //sposta il transform all'interno nella stanza specificata
                         clone.transform.parent = GameObject.Find("/" + path[path.Length - 1]).transform;
                         //nuovo Oggetto
@@ -968,10 +978,8 @@ public class ConsoleScript : MonoBehaviour
                         gameManager.GetComponent<LevelGeneration>().GetRoomByName(path[path.Length - 1]).oggetti.Add(selectedOggetto);
 
                         //il clone viene spostato
-                        clone.transform.localPosition = oldLocalPos + new Vector3(3, 0, 0);
-                        //nuovo nome
-                        clone.name = selectedOggetto.nomeOggetto + selectedOggetto.numCloni;
-                        selectedOggetto.numCloni++;
+                        clone.transform.localPosition = oldLocalPos + new Vector3(originalOggetto.numCloni + 1, 0, 0);
+                        originalOggetto.numCloni++;
                     }
                     //il path non esiste
                     else

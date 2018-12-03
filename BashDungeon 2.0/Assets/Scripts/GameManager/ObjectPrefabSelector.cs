@@ -18,6 +18,7 @@ public class ObjectPrefabSelector : MonoBehaviour {
     public GameObject pezzoChiave1;
     public GameObject pezzoChiave2;
     public GameObject cuccioloNascosto;
+    public GameObject osso;
 
     public GameObject pergamenaFoundUI;
     public GameObject setQuest;
@@ -120,7 +121,11 @@ public class ObjectPrefabSelector : MonoBehaviour {
         {
             return npc;
         }
-
+        
+        if (nomeOggetto.Contains ("osso"))
+        {
+            return osso;
+        }
         else
         {
             return pergamena;

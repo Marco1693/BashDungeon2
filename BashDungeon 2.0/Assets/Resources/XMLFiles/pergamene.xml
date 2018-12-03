@@ -141,4 +141,10 @@ La zona è piena di trappole nascoste, non è sicuro avviarsi in questa direzion
 Sin quando queste trappole resteranno qui non potrò farti passare, la sicurezza prima di tutto.</testoDialogo>
   </npc>
 
+  <npc>
+    <nome>dogSitterNPC</nome>
+    <testoDialogo>Putroppo senza del cibo questi cani non si sposteranno facilmente.
+    Se solo gli portassi qualcosa da mettere sotto i denti, forse riusciresti a passare
+    </testoDialogo>
+  </npc>
 </bashdungeon>
