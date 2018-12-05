@@ -11,7 +11,7 @@ Room lootRoom;
 bool roomLocked = false;
 bool primoIncontro = false;
 bool thereIsFood = false;
-string questText = "I 3 cani hanno bisogno di un osso nella stanza ";
+string questText = "I tre cani hanno bisogno di un osso nella stanza ";
 
     // Use this for initialization
     void Start()
@@ -23,7 +23,7 @@ string questText = "I 3 cani hanno bisogno di un osso nella stanza ";
         Oggetto bone = new Oggetto(gameManager.GetComponent<LevelGeneration>().RandomRoomNoLevelOrRoot(), "osso");
         bone.IsMovable = true;
         bone.CurrentRoom.oggetti.Add(bone);
-        bone.IsCopiable = true;
+        //bone.IsCopiable = true;
         GameObject selectedPrefab = gameManager.GetComponent<ObjectPrefabSelector>().PickObjectPrefab(Regex.Replace(bone.nomeOggetto, "[0-9]", ""));
 
         GameObject oggettoIstanziato = Instantiate(selectedPrefab) as GameObject;
@@ -40,6 +40,8 @@ string questText = "I 3 cani hanno bisogno di un osso nella stanza ";
 	
 	// Update is called once per frame
 	void Update () {
+        GameObject dogtest = GameObject.Find("caneAffamato");
+        dogtest.GetComponent<Rigidbody>().AddForce(transform.forward * 0.2f);
         if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == "dogSitterNPC") && !roomLocked)
         {
             dogSitterNPC = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == "dogSitterNPC");
@@ -59,7 +61,9 @@ string questText = "I 3 cani hanno bisogno di un osso nella stanza ";
             {
                 /*Destroy(ossoObj);
                 dogSitterNPC.CurrentRoom.oggetti.Remove(osso);*/
-                dogSitterNPC.TestoTxT = "Beh.. ora c'è un osso\n ma non credo basti per tutti e 3...";
+                Oggetto osso = dogSitterNPC.CurrentRoom.oggetti.Find(x => x.nomeOggetto == "osso");
+                osso.IsCopiable = true;
+                dogSitterNPC.TestoTxT = "Beh.. ora c'è un osso\n ma non credo basti per tutti e tre...";
                 thereIsFood = true;
                 //gameManager.GetComponent<PlayManager>().RemoveQuest(questText);
                 //lootRoom.IsLocked = false;
@@ -68,10 +72,28 @@ string questText = "I 3 cani hanno bisogno di un osso nella stanza ";
         }
         else if(roomLocked && thereIsFood)
         {
-            if (dogSitterNPC.CurrentRoom.oggetti.Find(x => x.nomeOggetto == "osso(Clone)1") != null )
+            if (dogSitterNPC.CurrentRoom.oggetti.Find(x => x.nomeOggetto == "osso(Clone)1") != null)
             {
-                Oggetto osso = dogSitterNPC.CurrentRoom.oggetti.Find(x => x.nomeOggetto == "osso");
-                GameObject ossoObj = GameObject.Find("/" + dogSitterNPC.CurrentRoom.nomeStanza + "/" + osso.nomeOggetto);
+                float speed = 0.2f;
+                /* Oggetto osso = dogSitterNPC.CurrentRoom.oggetti.Find(x => x.nomeOggetto == "osso");
+                 GameObject ossoObj = GameObject.Find("/" + dogSitterNPC.CurrentRoom.nomeStanza + "/" + osso.nomeOggetto);*/
+                dogSitterNPC.TestoTxT = "Ben fatto! Ora puoi passare";
+                lootRoom.IsLocked = false;
+                for (int i = 0; i < 3; i++)
+                {
+                    if (i > 0)
+                    {
+                        GameObject dog = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + "caneAffamato" + i);
+                        dog.GetComponent<Animation>().Play();
+                        dog.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+                    }
+                    else
+                    {
+                        GameObject dog = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + "caneAffamato");
+                        dog.GetComponent<Animation>().Play();
+                        dog.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+                    }
+                }
             }
         }
 
