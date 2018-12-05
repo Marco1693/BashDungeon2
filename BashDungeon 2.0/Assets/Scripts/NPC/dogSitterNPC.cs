@@ -40,8 +40,6 @@ string questText = "I tre cani hanno bisogno di un osso nella stanza ";
 	
 	// Update is called once per frame
 	void Update () {
-        GameObject dogtest = GameObject.Find("caneAffamato");
-        dogtest.GetComponent<Rigidbody>().AddForce(transform.forward * 0.2f);
         if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == "dogSitterNPC") && !roomLocked)
         {
             dogSitterNPC = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == "dogSitterNPC");
@@ -74,24 +72,26 @@ string questText = "I tre cani hanno bisogno di un osso nella stanza ";
         {
             if (dogSitterNPC.CurrentRoom.oggetti.Find(x => x.nomeOggetto == "osso(Clone)1") != null)
             {
-                float speed = 0.2f;
-                /* Oggetto osso = dogSitterNPC.CurrentRoom.oggetti.Find(x => x.nomeOggetto == "osso");
-                 GameObject ossoObj = GameObject.Find("/" + dogSitterNPC.CurrentRoom.nomeStanza + "/" + osso.nomeOggetto);*/
+                float speed = 0.5f;
+                Oggetto osso = dogSitterNPC.CurrentRoom.oggetti.Find(x => x.nomeOggetto == "osso");
+                
                 dogSitterNPC.TestoTxT = "Ben fatto! Ora puoi passare";
                 lootRoom.IsLocked = false;
                 for (int i = 0; i < 3; i++)
                 {
                     if (i > 0)
                     {
+                        GameObject ossoObj = GameObject.Find("/" + dogSitterNPC.CurrentRoom.nomeStanza + "/" + osso.nomeOggetto + "(Clone)" +(i-1));
                         GameObject dog = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + "caneAffamato" + i);
                         dog.GetComponent<Animation>().Play();
-                        dog.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+                        dog.transform.position += (ossoObj.transform.position - dog.transform.position) * Time.deltaTime * speed;
                     }
                     else
                     {
+                        GameObject ossoObj = GameObject.Find("/" + dogSitterNPC.CurrentRoom.nomeStanza + "/" + osso.nomeOggetto);
                         GameObject dog = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + "caneAffamato");
                         dog.GetComponent<Animation>().Play();
-                        dog.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+                        dog.transform.position += (ossoObj.transform.position - dog.transform.position) * Time.deltaTime * speed;
                     }
                 }
             }
