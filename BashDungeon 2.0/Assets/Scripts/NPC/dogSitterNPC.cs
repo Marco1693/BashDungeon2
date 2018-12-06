@@ -97,7 +97,6 @@ string questText = "I tre cani hanno bisogno di un osso nella stanza ";
                     }
                 }
             }
-            Destroy(GameObject.Find("/" + dogSitterNPC.CurrentRoom.nomeStanza + "/" + "osso(Clone)1"),5f);
 
         }
 
