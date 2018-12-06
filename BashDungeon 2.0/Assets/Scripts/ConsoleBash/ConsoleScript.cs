@@ -214,12 +214,19 @@ public class ConsoleScript : MonoBehaviour
                     {
                         break;
                     }
-                    else if (!(gameManager.GetComponent<LevelGeneration>().GetRoomByName(path[i]).childrenRooms.Exists(x => x.nomeStanza == path[i + 1])))
+                    else if (gameManager.GetComponent<LevelGeneration>().GetRoomByName(path[i]) != null)
+                    {
+                        if (!(gameManager.GetComponent<LevelGeneration>().GetRoomByName(path[i]).childrenRooms.Exists(x => x.nomeStanza == path[i + 1])))
+                        {
+                            isPathCorrect = false;
+                            break;
+                        }
+                    }
+                    else
                     {
                         isPathCorrect = false;
                         break;
                     }
-
                 }
             }
             else if (path.Length == 1)
