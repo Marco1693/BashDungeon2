@@ -85,6 +85,7 @@ string questText = "I tre cani hanno bisogno di un osso nella stanza ";
                         GameObject dog = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + "caneAffamato" + i);
                         dog.GetComponent<Animation>().Play();
                         dog.transform.position += (ossoObj.transform.position - dog.transform.position) * Time.deltaTime * speed;
+                        StartCoroutine(DogWalk(5f, dog));
                     }
                     else
                     {
@@ -92,9 +93,12 @@ string questText = "I tre cani hanno bisogno di un osso nella stanza ";
                         GameObject dog = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + "caneAffamato");
                         dog.GetComponent<Animation>().Play();
                         dog.transform.position += (ossoObj.transform.position - dog.transform.position) * Time.deltaTime * speed;
+                        StartCoroutine(DogWalk(5f, dog));
                     }
                 }
             }
+            Destroy(GameObject.Find("/" + dogSitterNPC.CurrentRoom.nomeStanza + "/" + "osso(Clone)1"),5f);
+
         }
 
         if ((!primoIncontro) && (gameManager.GetComponent<PlayManager>().ClickedObject == gameObject) && (playerGO.GetComponent<PlayerMovement>().BlockedMovement))
@@ -104,6 +108,10 @@ string questText = "I tre cani hanno bisogno di un osso nella stanza ";
         }
 
     }
+    IEnumerator DogWalk(float time, GameObject dog)
+    {
+        yield return new WaitForSeconds(time);
+        dog.GetComponent<Animation>().Stop();
+    }
 }
-
 

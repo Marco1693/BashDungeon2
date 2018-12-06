@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 114301009098210514}
   - component: {fileID: 54567434803584786}
   m_Layer: 0
-  m_Name: caneAffamato1
+  m_Name: caneAffamato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,7 +1152,7 @@ GameObject:
   - component: {fileID: 114193290711571502}
   - component: {fileID: 54692277038742460}
   m_Layer: 0
-  m_Name: caneAffamato
+  m_Name: caneAffamato1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1683,8 +1683,8 @@ Transform:
   - {fileID: 4004018539929814}
   - {fileID: 4090383823829558}
   - {fileID: 4315007924970364}
-  - {fileID: 4835573074165798}
   - {fileID: 4404985492811070}
+  - {fileID: 4835573074165798}
   - {fileID: 4975049345532154}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1720,7 +1720,7 @@ Transform:
   - {fileID: 4750914047303144}
   - {fileID: 4499648846651456}
   m_Father: {fileID: 4377879047135682}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4406845559721828
 Transform:
@@ -2123,7 +2123,7 @@ Transform:
   - {fileID: 4906118440537034}
   - {fileID: 4426185850094060}
   m_Father: {fileID: 4377879047135682}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4839704529516082
 Transform:
