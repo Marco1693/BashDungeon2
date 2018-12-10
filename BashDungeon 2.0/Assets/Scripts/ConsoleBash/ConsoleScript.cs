@@ -178,6 +178,10 @@ public class ConsoleScript : MonoBehaviour
             case "cp":
                 Cp(splittedMessage);
                 break;
+            //10/12
+            case "host":
+                Host(splittedMessage);
+                break;
 
             case "shutdown":
                 if (gameManager.GetComponent<PlayManager>().FineGioco)
@@ -1011,6 +1015,16 @@ public class ConsoleScript : MonoBehaviour
             //ha bisogno di 2 parametri
             textObj.text += ("cp prevede due parametri\n");
         }
+    }
+
+    void Host(String[] splittedMessage)
+    {
+        if (splittedMessage.Length == 2)
+        {
+            textObj.text += splittedMessage[1] + ("has address 127.0.0.1\n");
+        }
+        else
+            textObj.text += (" il comando host prevede due parametri\n");
     }
 
 
