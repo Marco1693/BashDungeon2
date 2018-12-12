@@ -25,6 +25,10 @@ public class LevelGeneration : MonoBehaviour
 
     public TextAsset xmlPergamene;
     string dataToParse;
+
+    //12/12
+    public List<Shop> shops = new List<Shop>();
+    public int numberOfShops;
     
 
     void Start()
@@ -64,6 +68,9 @@ public class LevelGeneration : MonoBehaviour
         Debug.Log("spawn oggetti");
         SpawnPlayer();
         Debug.Log("spawn player");
+
+        createShops(numberOfShops);
+        Debug.Log("creazione shops");
 
     }
     void CreateRooms()
@@ -662,6 +669,21 @@ public class LevelGeneration : MonoBehaviour
         else
         {
             return chosenRoom;
+        }
+    }
+
+    void createShops(int numeroShops)
+    {
+        Shop negozio;
+        int i = 0;
+        for(i = 0; i<numeroShops; i++)
+        {
+            negozio = new Shop();
+            if(!(shops.Exists(x => x.getIp() == negozio.getIp()))){
+                shops.Add(negozio);
+                Debug.Log(negozio.getIndirizzo());
+            }
+
         }
     }
 }

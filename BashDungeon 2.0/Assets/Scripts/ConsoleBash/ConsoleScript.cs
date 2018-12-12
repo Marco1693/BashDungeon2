@@ -1019,9 +1019,16 @@ public class ConsoleScript : MonoBehaviour
 
     void Host(String[] splittedMessage)
     {
+        Shop negozio;
         if (splittedMessage.Length == 2)
         {
-            textObj.text += splittedMessage[1] + ("has address 127.0.0.1\n");
+            //devo controllare se l'indirizzo esiste e farmi restituire l'ip numerico
+            if (gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.getIndirizzo() == splittedMessage[1])){
+                negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIndirizzo() == splittedMessage[1]);
+                textObj.text += splittedMessage[1] + (" has address ") + (negozio.getIp()) + ("\n");
+                //-->aggiungere ui per lo shop e ad essa l'ip restituito
+            }
+
         }
         else
             textObj.text += (" il comando host prevede due parametri\n");
