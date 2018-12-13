@@ -682,8 +682,32 @@ public class LevelGeneration : MonoBehaviour
             if(!(shops.Exists(x => x.getIp() == negozio.getIp()))){
                 shops.Add(negozio);
                 Debug.Log(negozio.getIndirizzo());
+                spawnShopCrates();
+                Debug.Log("cassa num" + i);
             }
-
         }
+    }
+
+    void spawnShopCrates()
+    {
+        GameObject gameManager = GameObject.Find("GameManager");
+
+        Vector3 oggettoPosition = new Vector3();
+        Oggetto crate = new Oggetto(gameManager.GetComponent<LevelGeneration>().RandomRoomNoLevelOrRoot(), "crateShop");
+        crate.CurrentRoom.oggetti.Add(crate);
+        GameObject selectedPrefab = gameManager.GetComponent<ObjectPrefabSelector>().PickObjectPrefab(Regex.Replace(crate.nomeOggetto, "[0-9]", ""));
+
+        GameObject oggettoIstanziato = Instantiate(selectedPrefab) as GameObject;
+
+        oggettoPosition.y = oggettoIstanziato.transform.position.y;
+        oggettoPosition.x = oggettoIstanziato.transform.position.x + (crate.CurrentRoom.gridPos.x * 24);
+        oggettoPosition.z = oggettoIstanziato.transform.position.z + (crate.CurrentRoom.gridPos.y * 24);
+
+        oggettoIstanziato.transform.position = oggettoPosition;
+        oggettoIstanziato.name = crate.nomeOggetto;
+       // oggettoIstanziato.transform.localScale *= 2;
+        oggettoIstanziato.transform.parent = GameObject.Find("/" + crate.CurrentRoom.nomeStanza).transform;
+
+
     }
 }

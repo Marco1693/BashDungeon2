@@ -19,6 +19,8 @@ public class ObjectPrefabSelector : MonoBehaviour {
     public GameObject pezzoChiave2;
     public GameObject cuccioloNascosto;
     public GameObject osso;
+    //13/12
+    public GameObject crateShop;
 
     public GameObject pergamenaFoundUI;
     public GameObject setQuest;
@@ -126,10 +128,17 @@ public class ObjectPrefabSelector : MonoBehaviour {
         {
             return osso;
         }
+
+        if (nomeOggetto.Contains("crateShop"))
+        {
+            return crateShop;
+        }
         else
         {
             return pergamena;
         }
+
+        
     }
 
     public GameObject PickStandardRoomPrefab()
