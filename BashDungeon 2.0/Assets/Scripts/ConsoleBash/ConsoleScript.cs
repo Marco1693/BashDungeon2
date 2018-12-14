@@ -1027,11 +1027,17 @@ public class ConsoleScript : MonoBehaviour
                 negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIndirizzo() == splittedMessage[1]);
                 textObj.text += splittedMessage[1] + (" has address ") + (negozio.getIp()) + ("\n");
                 //-->aggiungere ui per lo shop e ad essa l'ip restituito
+                //...
+                //...
+            }
+            else
+            {
+                textObj.text += ("l'indirizzo ") + splittedMessage[1] + (" non esiste");
             }
 
         }
         else
-            textObj.text += (" il comando host prevede due parametri\n");
+            textObj.text += ("il comando host prevede due parametri\n");
     }
 
 
