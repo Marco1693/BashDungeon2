@@ -553,11 +553,11 @@ public class LevelGeneration : MonoBehaviour
                         item.IsInvisible = true;
                         child.name = item.nomeOggetto;
                     }
-                    //solo per test copia DA TOGLIERE
+                    /*
                     if (child.name.Contains("barile"))
                     {
                         item.IsCopiable = true;
-                    }
+                    }*/
                 }
 
             }

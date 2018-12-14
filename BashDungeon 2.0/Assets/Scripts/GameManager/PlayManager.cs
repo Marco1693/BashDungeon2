@@ -25,6 +25,7 @@ public class PlayManager : MonoBehaviour
     public GameObject MenuPanel;
     public GameObject questsPanel;
     public GameObject foundPanel;
+    public GameObject shopPanel;
     public GameObject listOfFoundTxtUI;
     public GameObject listOfQuests;
 
@@ -214,6 +215,7 @@ public class PlayManager : MonoBehaviour
         MenuPanel.SetActive(true);
         SetFoundPanelOff();
         SetQuestPanelOff();
+        SetShopPanelOff();
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = true;
     }
 
@@ -222,6 +224,7 @@ public class PlayManager : MonoBehaviour
         questsPanel.SetActive(true);
         SetFoundPanelOff();
         SetMenuPanelOff();
+        SetShopPanelOff();
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = true;
     }
 
@@ -230,6 +233,16 @@ public class PlayManager : MonoBehaviour
         foundPanel.SetActive(true);
         SetMenuPanelOff();
         SetQuestPanelOff();
+        SetShopPanelOff();
+        playerGO.GetComponent<PlayerMovement>().BlockedMovement = true;
+    }
+
+    public void SetShopPanelActive()
+    {
+        shopPanel.SetActive(true);
+        SetMenuPanelOff();
+        SetQuestPanelOff();
+        SetFoundPanelOff();
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = true;
     }
 
@@ -248,6 +261,12 @@ public class PlayManager : MonoBehaviour
     public void SetFoundPanelOff()
     {
         foundPanel.SetActive(false);
+        playerGO.GetComponent<PlayerMovement>().BlockedMovement = false;
+    }
+
+    public void SetShopPanelOff()
+    {
+        shopPanel.SetActive(false);
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = false;
     }
 
