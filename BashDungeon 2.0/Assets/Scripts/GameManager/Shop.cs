@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop : MonoBehaviour {
+public class Shop{
     string ipNumerico;
     string indirizzo;
     float distanza;
