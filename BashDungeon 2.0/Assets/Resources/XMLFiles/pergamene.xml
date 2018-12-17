@@ -73,7 +73,14 @@ ES: grep pa* .    Ricerca la presenza di un gruppo di caratteri che inizia con "
   <pergamena>
     <testo>Puoi copiare alcuni oggetti utilizzando il comando "cp" seguito dal nome dell'oggetto da duplicare e dalla destinazione. Per indicare la stanza corrente puoi utilizzare ".".</testo>
   </pergamena>
-  
+
+  <pergamena>
+    <testo>Puoi utilizzare il comando "host" seguito dall'indirizzo testuale di uno shop per vederne l'indirizzo numerico</testo>
+  </pergamena>
+
+  <pergamena>
+    <testo>Puoi utilizzare il comando "ping", seguito da un indirizzo, per verificare la distanza di uno shop. Maggiore sarà il tempo di risposta maggiori saranno i prezzi dello shop</testo>
+  </pergamena>
   
   	<pergamenaTutorial>
       <nome>Cd</nome>

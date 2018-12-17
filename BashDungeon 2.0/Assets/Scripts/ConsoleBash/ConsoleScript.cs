@@ -1027,7 +1027,8 @@ public class ConsoleScript : MonoBehaviour
         if (splittedMessage.Length == 2)
         {
             //devo controllare se l'indirizzo esiste e farmi restituire l'ip numerico
-            if (gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.getIndirizzo() == splittedMessage[1])){
+            if (gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.getIndirizzo() == splittedMessage[1]))
+            {
                 negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIndirizzo() == splittedMessage[1]);
                 textObj.text += splittedMessage[1] + (" has address ") + (negozio.getIp()) + ("\n");
                 //-->aggiungere ui per lo shop e ad essa l'ip restituito
@@ -1041,7 +1042,9 @@ public class ConsoleScript : MonoBehaviour
 
         }
         else
+        {
             textObj.text += ("il comando host prevede due parametri\n");
+        }
     }
 
     void Ping(String[] splittedMessage)
@@ -1058,7 +1061,7 @@ public class ConsoleScript : MonoBehaviour
             else if (gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.getIp() == splittedMessage[1]))
             {
                 negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIp() == splittedMessage[1]);
-                textObj.text += splittedMessage[1] + (" time= ") + Math.Round(negozio.getDistanza(),2) + ("ms\n");
+                textObj.text += splittedMessage[1] + (" time= ") + Math.Round(negozio.getDistanza(), 2) + ("ms\n");
             }
             else
             {
