@@ -174,13 +174,17 @@ public class ConsoleScript : MonoBehaviour
             case "grep":
                 Grep(splittedMessage);
                 break;
-            //28/11
+           
             case "cp":
                 Cp(splittedMessage);
                 break;
-            //10/12
+            
             case "host":
                 Host(splittedMessage);
+                break;
+
+            case "ping":
+                Ping(splittedMessage);
                 break;
 
             case "shutdown":
@@ -1040,6 +1044,32 @@ public class ConsoleScript : MonoBehaviour
             textObj.text += ("il comando host prevede due parametri\n");
     }
 
+    void Ping(String[] splittedMessage)
+    {
+        Shop negozio;
+        if(splittedMessage.Length == 2)
+        {
+            //restituisci la distanza
+            if(gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.getIndirizzo() == splittedMessage[1]))
+            {
+                negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIndirizzo() == splittedMessage[1]);
+                textObj.text += splittedMessage[1] + (" time= ") + Math.Round(negozio.getDistanza(), 2) + ("ms\n");
+            }
+            else if (gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.getIp() == splittedMessage[1]))
+            {
+                negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIp() == splittedMessage[1]);
+                textObj.text += splittedMessage[1] + (" time= ") + Math.Round(negozio.getDistanza(),2) + ("ms\n");
+            }
+            else
+            {
+                textObj.text += ("l'indirizzo inserito non esiste \n");
+            }
+        }
+        else
+        {
+            textObj.text += ("il comando ping prevede due parametri\n");
+        }
+    }
 
     void Shutdown(String[] splittedMessage)
     {

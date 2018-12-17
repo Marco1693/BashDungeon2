@@ -237,6 +237,7 @@ public class PlayManager : MonoBehaviour
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = true;
     }
 
+    //14-12
     public void SetShopPanelActive()
     {
         shopPanel.SetActive(true);
@@ -264,6 +265,7 @@ public class PlayManager : MonoBehaviour
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = false;
     }
 
+    //14-12
     public void SetShopPanelOff()
     {
         shopPanel.SetActive(false);
