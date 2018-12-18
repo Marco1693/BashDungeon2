@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114701561362755012}
   - component: {fileID: 114801143386855456}
   - component: {fileID: 114371854840802830}
+  - component: {fileID: 114994279521561342}
   m_Layer: 0
   m_Name: ShopTrovati
   m_TagString: Untagged
@@ -126,9 +127,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ciao sono un testo di prova ora c'\xE8 qualcosa che puoi leggere anche
-    se dovrebbe esserci una lista di quest ma non siamo ancora sicuri e ci serve occupare
-    spazio a caso per vedere se tutto funziona come deve"
+  m_Text: 127.127.127.127
 --- !u!114 &114701561362755012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,6 +163,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &114994279521561342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1797409238335376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.9433962, g: 0.89444643, b: 0.89444643, a: 1}
+    m_HighlightedColor: {r: 0.9245283, g: 0.10902455, b: 0.10902455, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114078937964220020}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!222 &222741712450901792
 CanvasRenderer:
   m_ObjectHideFlags: 1

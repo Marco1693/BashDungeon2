@@ -1031,7 +1031,7 @@ public class ConsoleScript : MonoBehaviour
             {
                 negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIndirizzo() == splittedMessage[1]);
                 textObj.text += splittedMessage[1] + (" has address ") + (negozio.getIp()) + ("\n");
-                //-->aggiungere ui per lo shop e ad essa l'ip restituito
+                //aggiunge l'ip alla lista degli shop nell'UI se non era già presente
                 if (!(gameManager.GetComponent<PlayManager>().addedShops.Exists(x => x.GetComponentInChildren<Text>().text == negozio.getIp())))
                 {
                     gameManager.GetComponent<PlayManager>().AddShop(negozio.getIp());
@@ -1039,7 +1039,7 @@ public class ConsoleScript : MonoBehaviour
             }
             else
             {
-                textObj.text += ("l'indirizzo ") + splittedMessage[1] + (" non esiste");
+                textObj.text += ("l'indirizzo ") + splittedMessage[1] + (" non esiste\n");
             }
 
         }
