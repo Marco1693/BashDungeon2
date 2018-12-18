@@ -24,6 +24,7 @@ public class ObjectPrefabSelector : MonoBehaviour {
 
     public GameObject pergamenaFoundUI;
     public GameObject setQuest;
+    public GameObject shopFoundUI;
 
     public GameObject defaultLevel;
 
@@ -54,6 +55,14 @@ public class ObjectPrefabSelector : MonoBehaviour {
         get
         {
             return setQuest;
+        }
+    }
+
+    public GameObject ShopFoundUI
+    {
+        get
+        {
+            return shopFoundUI;
         }
     }
 

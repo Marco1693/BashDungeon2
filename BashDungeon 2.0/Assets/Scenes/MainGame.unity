@@ -494,7 +494,7 @@ Prefab:
     - target: {fileID: 224954190049511054, guid: aacfba5b1b29b0b4dafe6420c7a4cc73,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -125.00003
+      value: -125.000015
       objectReference: {fileID: 0}
     - target: {fileID: 114155505988633258, guid: aacfba5b1b29b0b4dafe6420c7a4cc73,
         type: 2}
@@ -909,7 +909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -272.6, y: 0.000061035156}
+  m_AnchoredPosition: {x: -272.5, y: 0.000061035156}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &564533275
@@ -1297,7 +1297,6 @@ MonoBehaviour:
   - {fileID: 0}
   rootPrefab: {fileID: 1399195080153628, guid: 0735d7fa7a7ea0844bf516994b13dc01, type: 2}
   xmlPergamene: {fileID: 4900000, guid: 39c84a36190309243a4bcf4173328717, type: 3}
-  shops: []
   numberOfShops: 2
 --- !u!4 &678893741
 Transform:
@@ -1563,6 +1562,7 @@ MonoBehaviour:
   shopPanel: {fileID: 207051862}
   listOfFoundTxtUI: {fileID: 1404681661}
   listOfQuests: {fileID: 2064350835}
+  listOfShops: {fileID: 680845711}
   addedQuests: []
 --- !u!114 &678893745
 MonoBehaviour:
@@ -1598,6 +1598,8 @@ MonoBehaviour:
   pergamenaFoundUI: {fileID: 1720658722714014, guid: 3abc30ecadaf47d4691561663010ad0d,
     type: 2}
   setQuest: {fileID: 1307117074316260, guid: 52c4e1e30467c9242b44f6def6ba0efc, type: 2}
+  shopFoundUI: {fileID: 1797409238335376, guid: 482dbfe2359d9874692e2387c83ba334,
+    type: 2}
   defaultLevel: {fileID: 1473213055824910, guid: 561f7aaddf5aed74fb5618bd1ee01c2f,
     type: 2}
   lootPrefab:
@@ -1747,7 +1749,7 @@ Prefab:
       objectReference: {fileID: 678893744}
     - target: {fileID: 1526780250069912, guid: 46977b6bfff243b4480e255f49b0986b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224844674069487906, guid: 46977b6bfff243b4480e255f49b0986b,
         type: 2}
@@ -1774,9 +1776,48 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224046456984069626, guid: 46977b6bfff243b4480e255f49b0986b,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889868129196296, guid: 46977b6bfff243b4480e255f49b0986b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224871596241031538, guid: 46977b6bfff243b4480e255f49b0986b,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224871596241031538, guid: 46977b6bfff243b4480e255f49b0986b,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224807799089187790, guid: 46977b6bfff243b4480e255f49b0986b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 224807799089187790, guid: 46977b6bfff243b4480e255f49b0986b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 224871596241031538, guid: 46977b6bfff243b4480e255f49b0986b,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.00000023841858
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46977b6bfff243b4480e255f49b0986b, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &680845711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1758739154243364, guid: 46977b6bfff243b4480e255f49b0986b,
+    type: 2}
+  m_PrefabInternal: {fileID: 680845710}
 --- !u!1001 &710430593
 Prefab:
   m_ObjectHideFlags: 0

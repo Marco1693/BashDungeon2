@@ -28,8 +28,10 @@ public class PlayManager : MonoBehaviour
     public GameObject shopPanel;
     public GameObject listOfFoundTxtUI;
     public GameObject listOfQuests;
+    public GameObject listOfShops;
 
     public List<GameObject> addedQuests;
+    public List<GameObject> addedShops;
     private bool fineGioco = false;
 
     LogWriter logWriter;
@@ -507,5 +509,13 @@ public class PlayManager : MonoBehaviour
             questToRemove.SetActive(false);
             logWriter.QuestRemovedToLog(questText.Substring(0, 20));
         }
+    }
+
+    public void AddShop(string indirizzo)
+    {
+        GameObject newShop = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().shopFoundUI) as GameObject;
+        newShop.transform.SetParent(listOfShops.transform, false);
+        newShop.GetComponentInChildren<Text>().text = indirizzo;
+        addedShops.Add(newShop);
     }
 }
