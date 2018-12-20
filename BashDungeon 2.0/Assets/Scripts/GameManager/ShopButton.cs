@@ -7,9 +7,11 @@ public class ShopButton : MonoBehaviour {
     Button ipClicked;
     GameObject gameManager;
     string ip;
+    Shop shop;
 
 	// Use this for initialization
-	void Start () {
+	void Start()
+    {
         ipClicked = this.GetComponent<Button>();
         ipClicked.onClick.AddListener(OpenShop);
         gameManager = GameObject.Find("GameManager");
@@ -18,6 +20,13 @@ public class ShopButton : MonoBehaviour {
 	
 	void OpenShop()
     {
+        shop = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIp() == ip);
         gameManager.GetComponent<PlayManager>().GoToShop(ip);
+        if (!shop.ProdottiSpawnati)
+        {
+            gameManager.GetComponent<LevelGeneration>().SpawnShopProducts(shop);
+            shop.ProdottiSpawnati = true;
+        }
+
     }
 }

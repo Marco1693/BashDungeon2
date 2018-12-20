@@ -684,7 +684,7 @@ public class LevelGeneration : MonoBehaviour
                 Debug.Log(negozio.getIndirizzo());
                 SpawnShopCrates(negozio.getIndirizzo());
                 Debug.Log("cassa num" + i);
-                SpawnShopProducts(negozio.listaProdotti, negozio.getSpedizione());
+               // SpawnShopProducts(negozio);
             }
         }
     }
@@ -712,12 +712,13 @@ public class LevelGeneration : MonoBehaviour
         oggettoIstanziato.transform.parent = GameObject.Find("/" + crate.CurrentRoom.nomeStanza).transform;
     }
 
-    void SpawnShopProducts(List<Prodotto> list, float spedizione)
+    public void SpawnShopProducts(Shop negozio)
     {
+        List<Prodotto> list = negozio.listaProdotti;
         for(int i = 0; i< list.Count; i++)
         {
             GameObject gameManager = GameObject.Find("GameManager");
-            gameManager.GetComponent<PlayManager>().AddProduct(list[i].Nome, list[i].Prezzo, spedizione);
+            gameManager.GetComponent<PlayManager>().AddProduct(list[i].Nome, list[i].Prezzo, negozio.getSpedizione());
         }
     }
 }

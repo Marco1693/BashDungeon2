@@ -191,120 +191,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120215347}
   m_CullTransparentMesh: 0
---- !u!1001 &203918364
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 463640752}
-    m_Modifications:
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 103.955
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.2050019
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 207.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114239792832654972, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-        type: 2}
-      propertyPath: m_Text
-      value: 'Comando "scritta di prova"
-
-        Prezzo : 22 G
-
-        Spese di spedizione : 7 G'
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 63e45e26c3b951441bb63ee65d8d2e59, type: 2}
-  m_IsPrefabAsset: 0
---- !u!224 &203918365 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224162648103241350, guid: 63e45e26c3b951441bb63ee65d8d2e59,
-    type: 2}
-  m_PrefabInternal: {fileID: 203918364}
 --- !u!1 &207051862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1526780250069912, guid: 46977b6bfff243b4480e255f49b0986b,
@@ -681,7 +567,7 @@ Prefab:
     - target: {fileID: 224954190049511054, guid: aacfba5b1b29b0b4dafe6420c7a4cc73,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -125
+      value: -125.000015
       objectReference: {fileID: 0}
     - target: {fileID: 114155505988633258, guid: aacfba5b1b29b0b4dafe6420c7a4cc73,
         type: 2}
@@ -850,8 +736,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 203918365}
+  m_Children: []
   m_Father: {fileID: 1323616040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -892,7 +777,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 10
+  m_Spacing: 40
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -1973,8 +1858,10 @@ MonoBehaviour:
   listOfFoundTxtUI: {fileID: 1404681661}
   listOfQuests: {fileID: 2064350835}
   listOfShops: {fileID: 680845711}
+  listOfProducts: {fileID: 463640751}
   addedQuests: []
   addedShops: []
+  addedProducts: []
 --- !u!114 &678893745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2011,6 +1898,7 @@ MonoBehaviour:
   setQuest: {fileID: 1307117074316260, guid: 52c4e1e30467c9242b44f6def6ba0efc, type: 2}
   shopFoundUI: {fileID: 1797409238335376, guid: 482dbfe2359d9874692e2387c83ba334,
     type: 2}
+  product: {fileID: 1032015863937654, guid: 63e45e26c3b951441bb63ee65d8d2e59, type: 2}
   defaultLevel: {fileID: 1473213055824910, guid: 561f7aaddf5aed74fb5618bd1ee01c2f,
     type: 2}
   lootPrefab:
