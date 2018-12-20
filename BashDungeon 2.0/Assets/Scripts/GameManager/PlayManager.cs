@@ -26,6 +26,8 @@ public class PlayManager : MonoBehaviour
     public GameObject questsPanel;
     public GameObject foundPanel;
     public GameObject shopPanel;
+    public GameObject shopClickedPanel;
+    public GameObject menuTitleShopClicked;
     public GameObject listOfFoundTxtUI;
     public GameObject listOfQuests;
     public GameObject listOfShops;
@@ -218,6 +220,7 @@ public class PlayManager : MonoBehaviour
         SetFoundPanelOff();
         SetQuestPanelOff();
         SetShopPanelOff();
+        SetShopClickedPanelOff();
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = true;
     }
 
@@ -227,6 +230,7 @@ public class PlayManager : MonoBehaviour
         SetFoundPanelOff();
         SetMenuPanelOff();
         SetShopPanelOff();
+        SetShopClickedPanelOff();
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = true;
     }
 
@@ -236,6 +240,7 @@ public class PlayManager : MonoBehaviour
         SetMenuPanelOff();
         SetQuestPanelOff();
         SetShopPanelOff();
+        SetShopClickedPanelOff();
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = true;
     }
 
@@ -246,6 +251,7 @@ public class PlayManager : MonoBehaviour
         SetMenuPanelOff();
         SetQuestPanelOff();
         SetFoundPanelOff();
+        SetShopClickedPanelOff();
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = true;
     }
 
@@ -272,6 +278,23 @@ public class PlayManager : MonoBehaviour
     {
         shopPanel.SetActive(false);
         playerGO.GetComponent<PlayerMovement>().BlockedMovement = false;
+    }
+
+    public void SetShopClickedPanelOff()
+    {
+        shopClickedPanel.SetActive(false);
+        playerGO.GetComponent<PlayerMovement>().BlockedMovement = false;
+    }
+
+    public void GoToShop(string ip)
+    {
+        shopClickedPanel.SetActive(true);
+        SetMenuPanelOff();
+        SetQuestPanelOff();
+        SetShopPanelOff();
+        SetFoundPanelOff();
+        menuTitleShopClicked.GetComponentInChildren<Text>().text = ip;
+        playerGO.GetComponent<PlayerMovement>().BlockedMovement = true;
     }
 
     public void OnCloseDialogues()

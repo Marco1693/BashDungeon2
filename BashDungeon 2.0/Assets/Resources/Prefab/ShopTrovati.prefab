@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114801143386855456}
   - component: {fileID: 114371854840802830}
   - component: {fileID: 114994279521561342}
+  - component: {fileID: 114209474140928588}
   m_Layer: 0
   m_Name: ShopTrovati
   m_TagString: Untagged
@@ -76,6 +77,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114209474140928588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1797409238335376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4161b166b098ac34d9e6ed31719ff08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114371854840802830
 MonoBehaviour:
   m_ObjectHideFlags: 1
