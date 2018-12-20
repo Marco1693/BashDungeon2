@@ -31,9 +31,11 @@ public class PlayManager : MonoBehaviour
     public GameObject listOfFoundTxtUI;
     public GameObject listOfQuests;
     public GameObject listOfShops;
+    public GameObject listOfProducts;
 
     public List<GameObject> addedQuests;
     public List<GameObject> addedShops;
+    public List<GameObject> addedProducts;
     private bool fineGioco = false;
 
     LogWriter logWriter;
@@ -540,5 +542,13 @@ public class PlayManager : MonoBehaviour
         newShop.transform.SetParent(listOfShops.transform, false);
         newShop.GetComponentInChildren<Text>().text = indirizzo;
         addedShops.Add(newShop);
+    }
+
+    public void AddProduct(string nome, float prezzo, float spedizione)
+    {
+        GameObject newProduct = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().product) as GameObject;
+        newProduct.transform.SetParent(listOfProducts.transform, false);
+        newProduct.GetComponentInChildren<Text>().text = (nome) + ("\n") + ("Prezzo: ") + (prezzo) + ("\n") + ("Prezzo di Spedizione: ") + (spedizione);
+        addedProducts.Add(newProduct);
     }
 }

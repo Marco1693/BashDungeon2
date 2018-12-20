@@ -25,6 +25,7 @@ public class ObjectPrefabSelector : MonoBehaviour {
     public GameObject pergamenaFoundUI;
     public GameObject setQuest;
     public GameObject shopFoundUI;
+    public GameObject product;
 
     public GameObject defaultLevel;
 

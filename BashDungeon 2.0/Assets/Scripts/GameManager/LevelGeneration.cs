@@ -69,7 +69,7 @@ public class LevelGeneration : MonoBehaviour
         SpawnPlayer();
         Debug.Log("spawn player");
 
-        createShops(numberOfShops);
+        CreateShops(numberOfShops);
         Debug.Log("creazione shops");
 
     }
@@ -672,7 +672,7 @@ public class LevelGeneration : MonoBehaviour
         }
     }
 
-    void createShops(int numeroShops)
+    void CreateShops(int numeroShops)
     {
         Shop negozio;
         int i = 0;
@@ -682,13 +682,14 @@ public class LevelGeneration : MonoBehaviour
             if(!(shops.Exists(x => x.getIp() == negozio.getIp()))){
                 shops.Add(negozio);
                 Debug.Log(negozio.getIndirizzo());
-                spawnShopCrates(negozio.getIndirizzo());
+                SpawnShopCrates(negozio.getIndirizzo());
                 Debug.Log("cassa num" + i);
+                SpawnShopProducts(negozio.listaProdotti, negozio.getSpedizione());
             }
         }
     }
 
-    void spawnShopCrates(string indirizzo)
+    void SpawnShopCrates(string indirizzo)
     {
         GameObject gameManager = GameObject.Find("GameManager");
 
@@ -709,8 +710,14 @@ public class LevelGeneration : MonoBehaviour
         oggettoIstanziato.name = crate.nomeOggetto;
        // oggettoIstanziato.transform.localScale *= 2;
         oggettoIstanziato.transform.parent = GameObject.Find("/" + crate.CurrentRoom.nomeStanza).transform;
-        
+    }
 
-
+    void SpawnShopProducts(List<Prodotto> list, float spedizione)
+    {
+        for(int i = 0; i< list.Count; i++)
+        {
+            GameObject gameManager = GameObject.Find("GameManager");
+            gameManager.GetComponent<PlayManager>().AddProduct(list[i].Nome, list[i].Prezzo, spedizione);
+        }
     }
 }
