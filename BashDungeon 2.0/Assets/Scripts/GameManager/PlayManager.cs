@@ -544,7 +544,7 @@ public class PlayManager : MonoBehaviour
         addedShops.Add(newShop);
     }
 
-    public void AddProduct(string nome, float prezzo, float spedizione)
+    public void AddProduct(string nome, float prezzo, float spedizione) //spawn gameObject
     {
         GameObject newProduct = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().product) as GameObject;
         newProduct.transform.SetParent(listOfProducts.transform, false);

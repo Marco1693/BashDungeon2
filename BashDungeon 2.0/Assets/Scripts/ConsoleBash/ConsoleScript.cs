@@ -1027,14 +1027,14 @@ public class ConsoleScript : MonoBehaviour
         if (splittedMessage.Length == 2)
         {
             //devo controllare se l'indirizzo esiste e farmi restituire l'ip numerico
-            if (gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.getIndirizzo() == splittedMessage[1]))
+            if (gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.GetIndirizzo() == splittedMessage[1]))
             {
-                negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIndirizzo() == splittedMessage[1]);
-                textObj.text += splittedMessage[1] + (" has address ") + (negozio.getIp()) + ("\n");
+                negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.GetIndirizzo() == splittedMessage[1]);
+                textObj.text += splittedMessage[1] + (" has address ") + (negozio.GetIp()) + ("\n");
                 //aggiunge l'ip alla lista degli shop nell'UI se non era già presente
-                if (!(gameManager.GetComponent<PlayManager>().addedShops.Exists(x => x.GetComponentInChildren<Text>().text == negozio.getIp())))
+                if (!(gameManager.GetComponent<PlayManager>().addedShops.Exists(x => x.GetComponentInChildren<Text>().text == negozio.GetIp())))
                 {
-                    gameManager.GetComponent<PlayManager>().AddShop(negozio.getIp());
+                    gameManager.GetComponent<PlayManager>().AddShop(negozio.GetIp());
                 }
             }
             else
@@ -1055,15 +1055,15 @@ public class ConsoleScript : MonoBehaviour
         if(splittedMessage.Length == 2)
         {
             //restituisci la distanza
-            if(gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.getIndirizzo() == splittedMessage[1]))
+            if(gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.GetIndirizzo() == splittedMessage[1]))
             {
-                negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIndirizzo() == splittedMessage[1]);
-                textObj.text += splittedMessage[1] + (" time= ") + Math.Round(negozio.getDistanza(), 2) + ("ms\n");
+                negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.GetIndirizzo() == splittedMessage[1]);
+                textObj.text += splittedMessage[1] + (" time= ") + Math.Round(negozio.GetDistanza(), 2) + ("ms\n");
             }
-            else if (gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.getIp() == splittedMessage[1]))
+            else if (gameManager.GetComponent<LevelGeneration>().shops.Exists(x => x.GetIp() == splittedMessage[1]))
             {
-                negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.getIp() == splittedMessage[1]);
-                textObj.text += splittedMessage[1] + (" time= ") + Math.Round(negozio.getDistanza(), 2) + ("ms\n");
+                negozio = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.GetIp() == splittedMessage[1]);
+                textObj.text += splittedMessage[1] + (" time= ") + Math.Round(negozio.GetDistanza(), 2) + ("ms\n");
             }
             else
             {

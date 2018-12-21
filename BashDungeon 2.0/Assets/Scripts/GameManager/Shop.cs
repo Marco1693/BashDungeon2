@@ -9,6 +9,7 @@ public class Shop{
     float spedizione;
     public List<Prodotto> listaProdotti = new List<Prodotto>();
     bool prodottiSpawnati;
+
 	public Shop()
     {
         indirizzo = ("www.") + GameObject.Find("GameManager").GetComponent<RandomNamesGenerator>().GenerateName() + (".com");
@@ -18,22 +19,22 @@ public class Shop{
         ProdottiInVendita();
     }
 
-    public string getIp()
+    public string GetIp()
     {
         return ipNumerico;
     }
 
-    public string getIndirizzo()
+    public string GetIndirizzo()
     {
         return indirizzo;
     }
 
-    public float getDistanza()
+    public float GetDistanza()
     {
         return distanza;
     }
 
-    public float getSpedizione()
+    public float GetSpedizione()
     {
         return spedizione;
     }
@@ -53,10 +54,10 @@ public class Shop{
 
     public void ProdottiInVendita()
     {
-        Prodotto prodotto = new Prodotto("kill", 5f * spedizione);
+        Prodotto prodotto = new Prodotto("kill", 5f);
         listaProdotti.Add(prodotto);
 
-        Prodotto test = new Prodotto("test", 7.22f * spedizione);
+        Prodotto test = new Prodotto("test", 7.22f);
         listaProdotti.Add(test);
     }
 }

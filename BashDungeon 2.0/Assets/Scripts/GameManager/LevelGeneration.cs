@@ -679,10 +679,10 @@ public class LevelGeneration : MonoBehaviour
         for(i = 0; i<numeroShops; i++)
         {
             negozio = new Shop();
-            if(!(shops.Exists(x => x.getIp() == negozio.getIp()))){
+            if(!(shops.Exists(x => x.GetIp() == negozio.GetIp()))){
                 shops.Add(negozio);
-                Debug.Log(negozio.getIndirizzo());
-                SpawnShopCrates(negozio.getIndirizzo());
+                Debug.Log(negozio.GetIndirizzo());
+                SpawnShopCrates(negozio.GetIndirizzo());
                 Debug.Log("cassa num" + i);
                // SpawnShopProducts(negozio);
             }
@@ -715,10 +715,11 @@ public class LevelGeneration : MonoBehaviour
     public void SpawnShopProducts(Shop negozio)
     {
         List<Prodotto> list = negozio.listaProdotti;
+        GameObject gameManager = GameObject.Find("GameManager");
+
         for(int i = 0; i< list.Count; i++)
         {
-            GameObject gameManager = GameObject.Find("GameManager");
-            gameManager.GetComponent<PlayManager>().AddProduct(list[i].Nome, list[i].Prezzo, negozio.getSpedizione());
+            gameManager.GetComponent<PlayManager>().AddProduct(list[i].Nome, list[i].Prezzo, negozio.GetSpedizione());
         }
     }
 }
