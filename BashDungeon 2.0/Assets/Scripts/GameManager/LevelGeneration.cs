@@ -719,7 +719,7 @@ public class LevelGeneration : MonoBehaviour
 
         for(int i = 0; i< list.Count; i++)
         {
-            gameManager.GetComponent<PlayManager>().AddProduct(list[i].Nome, list[i].Prezzo, negozio.GetSpedizione());
+            gameManager.GetComponent<PlayManager>().AddProduct(list[i].Nome, list[i].Prezzo, list[i].Icon, negozio.GetSpedizione());
         }
     }
 }

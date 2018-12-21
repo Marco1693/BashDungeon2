@@ -22,6 +22,8 @@ public class ObjectPrefabSelector : MonoBehaviour {
     //13/12
     public GameObject crateShop;
 
+    public Sprite axe;
+
     public GameObject pergamenaFoundUI;
     public GameObject setQuest;
     public GameObject shopFoundUI;
@@ -221,5 +223,17 @@ public class ObjectPrefabSelector : MonoBehaviour {
         return chosenPrefab;
     }
 
+    public Sprite Axe
+    {
+        get
+        {
+            return axe;
+        }
+
+        set
+        {
+            axe = value;
+        }
+    }
 
 }

@@ -54,10 +54,11 @@ public class Shop{
 
     public void ProdottiInVendita()
     {
-        Prodotto prodotto = new Prodotto("kill", 5f);
+        GameObject gameManager = GameObject.Find("GameManager");
+        Prodotto prodotto = new Prodotto("kill", 5f, gameManager.GetComponent<ObjectPrefabSelector>().Axe);
         listaProdotti.Add(prodotto);
 
-        Prodotto test = new Prodotto("test", 7.22f);
+        Prodotto test = new Prodotto("test", 7.22f, gameManager.GetComponent<ObjectPrefabSelector>().Axe);
         listaProdotti.Add(test);
     }
 }

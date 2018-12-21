@@ -7,11 +7,13 @@ public class Prodotto{
     string nome;
     float prezzo;
     //float spedizione;
+    Sprite icon;
 	
-    public Prodotto(string nome, float prezzo)
+    public Prodotto(string nome, float prezzo, Sprite icon)
     {
         this.nome = nome;
         this.prezzo = prezzo;
+        this.icon = icon;
     }
     public string Nome
     {
@@ -39,6 +41,18 @@ public class Prodotto{
         }
     }
 
+    public Sprite Icon
+    {
+        get
+        {
+            return icon;
+        }
+
+        set
+        {
+            icon = value;
+        }
+    }
     /*public float Spedizione
     {
         get

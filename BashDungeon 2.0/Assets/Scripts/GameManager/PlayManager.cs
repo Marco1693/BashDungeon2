@@ -544,11 +544,12 @@ public class PlayManager : MonoBehaviour
         addedShops.Add(newShop);
     }
 
-    public void AddProduct(string nome, float prezzo, float spedizione) //spawn gameObject
+    public void AddProduct(string nome, float prezzo, Sprite icon, float spedizione) //spawn gameObject
     {
         GameObject newProduct = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().product) as GameObject;
         newProduct.transform.SetParent(listOfProducts.transform, false);
         newProduct.GetComponentInChildren<Text>().text = (nome) + ("\n") + ("Prezzo: ") + (prezzo) + ("\n") + ("Prezzo di Spedizione: ") + (spedizione);
+        newProduct.transform.Find("Image").gameObject.GetComponent<Image>().sprite = icon;
         addedProducts.Add(newProduct);
     }
 }

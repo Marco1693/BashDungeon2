@@ -567,7 +567,7 @@ Prefab:
     - target: {fileID: 224954190049511054, guid: aacfba5b1b29b0b4dafe6420c7a4cc73,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -125.000015
+      value: -125.00003
       objectReference: {fileID: 0}
     - target: {fileID: 114155505988633258, guid: aacfba5b1b29b0b4dafe6420c7a4cc73,
         type: 2}
@@ -1893,6 +1893,7 @@ MonoBehaviour:
     type: 2}
   osso: {fileID: 100000, guid: a117e3161d7aadc4c9632a1f8837c17a, type: 2}
   crateShop: {fileID: 1228077705287334, guid: a4ccca2e399e24d41851f52646f26f0a, type: 2}
+  axe: {fileID: 21300000, guid: 632aebc77b7de4e80ba2a20eac8da5da, type: 3}
   pergamenaFoundUI: {fileID: 1720658722714014, guid: 3abc30ecadaf47d4691561663010ad0d,
     type: 2}
   setQuest: {fileID: 1307117074316260, guid: 52c4e1e30467c9242b44f6def6ba0efc, type: 2}
