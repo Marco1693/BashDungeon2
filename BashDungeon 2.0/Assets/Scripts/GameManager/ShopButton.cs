@@ -22,15 +22,10 @@ public class ShopButton : MonoBehaviour {
     {
         shop = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.GetIp() == ip);
         gameManager.GetComponent<PlayManager>().GoToShop(ip);
-       // if (!shop.ProdottiSpawnati)
-       // {
-            foreach (GameObject prodotto in gameManager.GetComponent<PlayManager>().addedProducts)
-            {
-                Destroy(prodotto);
-            }
-            gameManager.GetComponent<LevelGeneration>().SpawnShopProducts(shop);
-          //  shop.ProdottiSpawnati = true;
-      //  }
-
+        foreach (GameObject prodotto in gameManager.GetComponent<PlayManager>().addedProducts)
+        {
+            Destroy(prodotto);
+        }
+        gameManager.GetComponent<LevelGeneration>().SpawnShopProducts(shop);
     }
 }

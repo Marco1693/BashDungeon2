@@ -8,7 +8,7 @@ public class Shop{
     float distanza;
     float spedizione;
     public List<Prodotto> listaProdotti = new List<Prodotto>();
-    bool prodottiSpawnati;
+    //bool prodottiSpawnati;
 
 	public Shop()
     {
@@ -39,7 +39,7 @@ public class Shop{
         return spedizione;
     }
 
-    public bool ProdottiSpawnati
+    /*public bool ProdottiSpawnati
     {
         get
         {
@@ -50,7 +50,7 @@ public class Shop{
         {
             prodottiSpawnati = value;
         }
-    }
+    }*/
 
     public void ProdottiInVendita()
     {
