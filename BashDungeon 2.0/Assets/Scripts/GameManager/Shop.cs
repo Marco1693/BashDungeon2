@@ -58,7 +58,7 @@ public class Shop{
         Prodotto prodotto = new Prodotto("kill", 5f, gameManager.GetComponent<ObjectPrefabSelector>().Axe);
         listaProdotti.Add(prodotto);
 
-        Prodotto test = new Prodotto("test", 7.22f, gameManager.GetComponent<ObjectPrefabSelector>().Axe);
+        Prodotto test = new Prodotto("test", 7.22f, gameManager.GetComponent<ObjectPrefabSelector>().Dragon);
         listaProdotti.Add(test);
     }
 }

@@ -22,14 +22,15 @@ public class ObjectPrefabSelector : MonoBehaviour {
     //13/12
     public GameObject crateShop;
 
-    public Sprite axe;
-
     public GameObject pergamenaFoundUI;
     public GameObject setQuest;
     public GameObject shopFoundUI;
     public GameObject product;
 
     public GameObject defaultLevel;
+
+    public Sprite axe;
+    public Sprite dragon;
 
     public List<GameObject> lootPrefab;
 
@@ -223,6 +224,7 @@ public class ObjectPrefabSelector : MonoBehaviour {
         return chosenPrefab;
     }
 
+    // Prefab Sprites
     public Sprite Axe
     {
         get
@@ -233,6 +235,19 @@ public class ObjectPrefabSelector : MonoBehaviour {
         set
         {
             axe = value;
+        }
+    }
+
+    public Sprite Dragon
+    {
+        get
+        {
+            return dragon;
+        }
+
+        set
+        {
+            dragon = value;
         }
     }
 

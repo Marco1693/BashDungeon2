@@ -1893,7 +1893,6 @@ MonoBehaviour:
     type: 2}
   osso: {fileID: 100000, guid: a117e3161d7aadc4c9632a1f8837c17a, type: 2}
   crateShop: {fileID: 1228077705287334, guid: a4ccca2e399e24d41851f52646f26f0a, type: 2}
-  axe: {fileID: 21300000, guid: 632aebc77b7de4e80ba2a20eac8da5da, type: 3}
   pergamenaFoundUI: {fileID: 1720658722714014, guid: 3abc30ecadaf47d4691561663010ad0d,
     type: 2}
   setQuest: {fileID: 1307117074316260, guid: 52c4e1e30467c9242b44f6def6ba0efc, type: 2}
@@ -1902,6 +1901,8 @@ MonoBehaviour:
   product: {fileID: 1032015863937654, guid: 63e45e26c3b951441bb63ee65d8d2e59, type: 2}
   defaultLevel: {fileID: 1473213055824910, guid: 561f7aaddf5aed74fb5618bd1ee01c2f,
     type: 2}
+  axe: {fileID: 21300000, guid: 632aebc77b7de4e80ba2a20eac8da5da, type: 3}
+  dragon: {fileID: 21300000, guid: 87dbc864affd84f419c175471a50bd44, type: 3}
   lootPrefab:
   - {fileID: 1157450812502990, guid: ee172383ba6a14e498afe0c0eb379f9b, type: 2}
   - {fileID: 1976772957137708, guid: 3777d2cac626ede4e83be5aaada296c5, type: 2}
