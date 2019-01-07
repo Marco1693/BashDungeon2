@@ -1862,6 +1862,8 @@ MonoBehaviour:
   addedQuests: []
   addedShops: []
   addedProducts: []
+  playerMoney: 0
+  textMoney: {fileID: 1420596336}
 --- !u!114 &678893745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2832,8 +2834,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391.6, y: -4.1449}
-  m_SizeDelta: {x: 178.73, y: 38.29}
+  m_AnchoredPosition: {x: 390, y: -3}
+  m_SizeDelta: {x: 180, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420596338
 MonoBehaviour:
@@ -3006,7 +3008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 501.1, y: -0.19506}
+  m_AnchoredPosition: {x: 501.09998, y: -0.19506073}
   m_SizeDelta: {x: 30.305, y: 30.39}
   m_Pivot: {x: 0.4999997, y: 0.49999994}
 --- !u!114 &1727408892
