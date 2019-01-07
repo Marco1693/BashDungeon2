@@ -11,6 +11,7 @@ public class PlayManager : MonoBehaviour
     GameObject playerGO;
     GameObject clickedObject;
     GameObject foundWithGrepGO;
+
     bool isMouseOverObj;
 
     public GameObject pergamenaPanel;
@@ -39,6 +40,9 @@ public class PlayManager : MonoBehaviour
     private bool fineGioco = false;
 
     LogWriter logWriter;
+
+    public float playerMoney;
+    public GameObject textMoney;
 
     public bool FineGioco
     {
@@ -138,6 +142,7 @@ public class PlayManager : MonoBehaviour
         playerGO = GameObject.Find("Player");
         addedQuests = new List<GameObject>();
         logWriter = GetComponent<LogWriter>();
+        playerMoney = 0;
     }
 
     private void Update()
@@ -202,6 +207,8 @@ public class PlayManager : MonoBehaviour
             dialoguePanel.SetActive(true);
             dialogueText.GetComponent<DialogueController>().SetText("Ecco la pergamena che cercavo !");
         }
+
+        textMoney.GetComponent<Text>().text = playerMoney.ToString();
     }
 
     public void SetMenuUIActive()
