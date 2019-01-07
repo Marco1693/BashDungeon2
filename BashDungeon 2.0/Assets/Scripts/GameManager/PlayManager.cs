@@ -559,4 +559,18 @@ public class PlayManager : MonoBehaviour
         newProduct.transform.Find("Image").gameObject.GetComponent<Image>().sprite = icon;
         addedProducts.Add(newProduct);
     }
+
+    public void AddMoney(float amount)
+    {
+        playerMoney += amount;
+    }
+
+    public void SubMoney(float amount)
+    {
+        playerMoney -= amount;
+        if (playerMoney < 0)
+        {
+            playerMoney = 0;
+        }
+    }
 }
