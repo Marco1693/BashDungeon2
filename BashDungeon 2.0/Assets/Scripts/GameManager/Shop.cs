@@ -7,7 +7,8 @@ public class Shop{
     string indirizzo;
     float distanza;
     float spedizione;
-    public List<Prodotto> listaProdotti = new List<Prodotto>();
+    public List<Prodotto> listaProdotti = new List<Prodotto>();//da togliere
+    //public List<Prodotto> listaComprati = new List<Prodotto>();//da togliere
     //bool prodottiSpawnati;
 
 	public Shop()

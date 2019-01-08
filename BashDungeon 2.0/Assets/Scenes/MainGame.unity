@@ -151,7 +151,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.99999964}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -743,7 +743,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -2.0899963, y: -89.59}
+  m_SizeDelta: {x: -2.0899963, y: -90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &463640753
 MonoBehaviour:
@@ -1864,6 +1864,7 @@ MonoBehaviour:
   addedProducts: []
   playerMoney: 0
   textMoney: {fileID: 1420596336}
+  ipBuy: 
 --- !u!114 &678893745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2577,7 +2578,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 120215348}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999976
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3008,7 +3009,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 501.09998, y: -0.19506073}
+  m_AnchoredPosition: {x: 501, y: -0.19506073}
   m_SizeDelta: {x: 30.305, y: 30.39}
   m_Pivot: {x: 0.4999997, y: 0.49999994}
 --- !u!114 &1727408892

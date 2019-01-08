@@ -16,6 +16,7 @@ public class ShopButton : MonoBehaviour {
         ipClicked.onClick.AddListener(OpenShop);
         gameManager = GameObject.Find("GameManager");
         ip = this.GetComponentInChildren<Text>().text;
+        gameManager.GetComponent<PlayManager>().ipBuy = ip;
     }
 	
 	void OpenShop()

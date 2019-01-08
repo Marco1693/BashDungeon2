@@ -714,12 +714,14 @@ public class LevelGeneration : MonoBehaviour
 
     public void SpawnShopProducts(Shop negozio)
     {
-        List<Prodotto> list = negozio.listaProdotti;
         GameObject gameManager = GameObject.Find("GameManager");
+        List<Prodotto> list = negozio.listaProdotti;
+        List<Prodotto> listBought = gameManager.GetComponent<PlayManager>().listaComprati;
 
-        for(int i = 0; i< list.Count; i++)
-        {
-            gameManager.GetComponent<PlayManager>().AddProduct(list[i].Nome, list[i].Prezzo, list[i].Icon, negozio.GetSpedizione());
+        for (int i = 0; i< list.Count; i++)
+        {   
+            if(!(listBought.Exists(x => x.Nome == list[i].Nome)))
+                gameManager.GetComponent<PlayManager>().AddProduct(list[i].Nome, list[i].Prezzo, list[i].Icon, negozio.GetSpedizione());
         }
     }
 }
