@@ -561,7 +561,7 @@ public class PlayManager : MonoBehaviour
         GameObject newProduct = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().product) as GameObject;
         newProduct.transform.SetParent(listOfProducts.transform, false);
         newProduct.GetComponentsInChildren<Text>()[0].text = nome;
-        newProduct.GetComponentsInChildren<Text>()[1].text = ("Prezzo: ") + (prezzo) + ("\n") + ("Prezzo di Spedizione: ") + (spedizione);
+        newProduct.GetComponentsInChildren<Text>()[1].text = ("Prezzo: ") + (prezzo) + ("\n") + ("Costi di spedizione: ") + (spedizione);
         newProduct.transform.Find("Image").gameObject.GetComponent<Image>().sprite = icon;
         addedProducts.Add(newProduct);
     }
