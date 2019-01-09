@@ -567,7 +567,7 @@ Prefab:
     - target: {fileID: 224954190049511054, guid: aacfba5b1b29b0b4dafe6420c7a4cc73,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -125.00002
+      value: -125.000015
       objectReference: {fileID: 0}
     - target: {fileID: 114155505988633258, guid: aacfba5b1b29b0b4dafe6420c7a4cc73,
         type: 2}
@@ -2813,6 +2813,7 @@ GameObject:
   - component: {fileID: 1420596337}
   - component: {fileID: 1420596339}
   - component: {fileID: 1420596338}
+  - component: {fileID: 1420596340}
   m_Layer: 9
   m_Name: Money
   m_TagString: Untagged
@@ -2878,6 +2879,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1420596336}
   m_CullTransparentMesh: 0
+--- !u!95 &1420596340
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1420596336}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20795db910863b346bd8e010088d527f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1591018663
 GameObject:
   m_ObjectHideFlags: 0

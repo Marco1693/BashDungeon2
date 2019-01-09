@@ -11,7 +11,7 @@ public class BuyButton : MonoBehaviour {
     GameObject gameManager;
     Shop shop;
     Prodotto prodotto;
-
+    Animation alert;
     // Use this for initialization
     void Start ()
     {
@@ -22,6 +22,7 @@ public class BuyButton : MonoBehaviour {
         ip = gameManager.GetComponent<PlayManager>().ipBuy;
         shop = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.GetIp() == ip);
         prodotto = shop.listaProdotti.Find(x => x.Nome == nomeProdotto);
+        alert = GameObject.Find("Money").GetComponent<Animation>();
     }
 	
 	void BuyProduct()
@@ -35,7 +36,8 @@ public class BuyButton : MonoBehaviour {
         }
         else
         {
-            //non hai abbastanza soldi
+            alert.Play("redAlert");
+            StartCoroutine(StopAlert());
         }
     }
 
@@ -50,5 +52,12 @@ public class BuyButton : MonoBehaviour {
                 //il comando non esiste
                 break;
         }
+    }
+
+    IEnumerator StopAlert()
+    {
+        yield return new WaitForSeconds(2);
+        alert.Stop("redAlert");
+
     }
 }
