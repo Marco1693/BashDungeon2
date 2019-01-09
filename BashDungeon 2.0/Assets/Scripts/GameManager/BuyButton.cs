@@ -36,8 +36,11 @@ public class BuyButton : MonoBehaviour {
         }
         else
         {
-            alert.Play("redAlert");
-            StartCoroutine(StopAlert());
+            if (!alert.isPlaying)
+            {
+                alert.Play("redAlert");
+                StartCoroutine(StopAlert());
+            }
         }
     }
 
