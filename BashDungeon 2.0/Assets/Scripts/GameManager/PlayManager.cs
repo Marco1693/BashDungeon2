@@ -527,12 +527,11 @@ public class PlayManager : MonoBehaviour
 
     public void AddQuest(string testo)
     {
-        
-            GameObject newQuest = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().setQuest) as GameObject;
-            newQuest.transform.SetParent(listOfQuests.transform, false);
-            newQuest.GetComponentInChildren<Text>().text = testo;
-            addedQuests.Add(newQuest);
-            logWriter.QuestAddedToLog(testo.Substring(0, 20));
+        GameObject newQuest = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().setQuest) as GameObject;
+        newQuest.transform.SetParent(listOfQuests.transform, false);
+        newQuest.GetComponentInChildren<Text>().text = testo;
+        addedQuests.Add(newQuest);
+        logWriter.QuestAddedToLog(testo.Substring(0, 20));
         
     }
 
