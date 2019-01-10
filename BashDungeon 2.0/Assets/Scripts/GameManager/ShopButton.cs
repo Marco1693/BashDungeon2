@@ -21,7 +21,7 @@ public class ShopButton : MonoBehaviour {
 	
 	void OpenShop()
     {
-        shop = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.GetIp() == ip);
+        shop = gameManager.GetComponent<LevelGeneration>().shops.Find(x => (x.GetIp()+("\n")) == ip);
         gameManager.GetComponent<PlayManager>().GoToShop(ip);
         foreach (GameObject prodotto in gameManager.GetComponent<PlayManager>().addedProducts)
         {

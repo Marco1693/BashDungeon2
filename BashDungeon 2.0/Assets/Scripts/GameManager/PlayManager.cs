@@ -551,7 +551,7 @@ public class PlayManager : MonoBehaviour
     {
         GameObject newShop = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().shopFoundUI) as GameObject;
         newShop.transform.SetParent(listOfShops.transform, false);
-        newShop.GetComponentInChildren<Text>().text = indirizzo;
+        newShop.GetComponentInChildren<Text>().text = indirizzo + ("\n");
         addedShops.Add(newShop);
     }
 

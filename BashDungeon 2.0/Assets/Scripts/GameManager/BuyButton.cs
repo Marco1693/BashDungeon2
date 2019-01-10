@@ -20,7 +20,7 @@ public class BuyButton : MonoBehaviour {
         productClicked.onClick.AddListener(BuyProduct);
         gameManager = GameObject.Find("GameManager");
         ip = gameManager.GetComponent<PlayManager>().ipBuy;
-        shop = gameManager.GetComponent<LevelGeneration>().shops.Find(x => x.GetIp() == ip);
+        shop = gameManager.GetComponent<LevelGeneration>().shops.Find(x => (x.GetIp()+("\n")) == ip);
         prodotto = shop.listaProdotti.Find(x => x.Nome == nomeProdotto);
         alert = GameObject.Find("Money").GetComponent<Animation>();
     }
