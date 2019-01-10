@@ -4,14 +4,15 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class DogSitterNPC : MonoBehaviour {
-GameObject playerGO;
-Oggetto dogSitterNPC;
-GameObject gameManager;
-Room lootRoom;
-bool roomLocked = false;
-bool primoIncontro = false;
-bool thereIsFood = false;
-string questText = "I tre cani hanno bisogno di un osso nella stanza ";
+    GameObject playerGO;
+    Oggetto dogSitterNPC;
+    GameObject gameManager;
+    Room lootRoom;
+    bool roomLocked = false;
+    bool primoIncontro = false;
+    bool thereIsFood = false;
+    bool deleted = false;
+    string questText = "I tre cani hanno bisogno di un osso nella stanza ";
 
     // Use this for initialization
     void Start()
@@ -76,7 +77,11 @@ string questText = "I tre cani hanno bisogno di un osso nella stanza ";
                 Oggetto osso = dogSitterNPC.CurrentRoom.oggetti.Find(x => x.nomeOggetto == "osso");
                 dogSitterNPC.TestoTxT = "Ben fatto! Ora puoi passare";
                 lootRoom.IsLocked = false;
-                gameManager.GetComponent<PlayManager>().RemoveQuest(questText);
+                if (!deleted)
+                {
+                    gameManager.GetComponent<PlayManager>().RemoveQuest(questText);
+                    deleted = true;
+                }
                 for (int i = 0; i < 3; i++)
                 {
                     if (i > 0)

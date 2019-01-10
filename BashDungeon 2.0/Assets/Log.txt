@@ -2145,3 +2145,36 @@ BASH DUGEON - LOGS
 
 1/10/2019 11:12:48 AM - quest added - "Risolvi l'indovinell..."
 1/10/2019 11:14:53 AM - quest added - "I tre cani hanno bis..."
+1/10/2019 11:19:27 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:27 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:27 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:27 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:28 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:28 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:28 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:29 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:29 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:29 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:29 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:29 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:30 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:30 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:30 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:30 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:30 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:31 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:31 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:31 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:31 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:32 AM - quest removed - "I tre cani hanno bis..."
+1/10/2019 11:19:32 AM - quest removed - "I tre cani hanno bis..."
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+1/10/2019 12:31:32 PM - quest added - "I tre cani hanno bis..."
+1/10/2019 12:32:58 PM - quest removed - "I tre cani hanno bis..."
