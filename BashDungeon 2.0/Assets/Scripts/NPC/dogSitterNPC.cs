@@ -67,7 +67,7 @@ public class DogSitterNPC : MonoBehaviour {
                 //gameManager.GetComponent<PlayManager>().RemoveQuest(questText);
                 //lootRoom.IsLocked = false;
                 //Destroy(this);
-            }
+            } 
         }
         else if(roomLocked && thereIsFood)
         {
