@@ -160,16 +160,16 @@ public class ObjectPrefabSelector : MonoBehaviour {
     public GameObject PickStandardRoomPrefab()
     {
         int random;
-        /*if (!isSpawnedProcessi)
+        if (!isSpawnedProcessi)
         {
             isSpawnedProcessi = true;
             Debug.Log("stanza processi spawnata");
             return standardRoomPrefab[3];
-        }*/
+        }
         random = Random.Range(0, standardRoomPrefab.Count);
-        if(random == 3)
+        while(random == 3)
         {
-            Debug.Log("PROCESSIII");
+            random = Random.Range(0, standardRoomPrefab.Count);
         }
         return standardRoomPrefab[random];
     }
