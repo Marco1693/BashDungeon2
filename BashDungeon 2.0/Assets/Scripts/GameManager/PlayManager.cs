@@ -41,9 +41,15 @@ public class PlayManager : MonoBehaviour
 
     LogWriter logWriter;
 
+    //soldi del player
     public float playerMoney;
     public GameObject textMoney;
+
     public string ipBuy;
+
+    //memoria del player per i processi
+    public int memory;
+    public GameObject textMemory;
 
     //public List<Prodotto> listaProdotti = new List<Prodotto>();
     public List<Prodotto> listaComprati = new List<Prodotto>();
@@ -147,6 +153,7 @@ public class PlayManager : MonoBehaviour
         addedQuests = new List<GameObject>();
         logWriter = GetComponent<LogWriter>();
         playerMoney = 0;
+        memory = 0;
     }
 
     private void Update()
@@ -213,6 +220,7 @@ public class PlayManager : MonoBehaviour
         }
 
         textMoney.GetComponent<Text>().text = playerMoney.ToString();
+        textMemory.GetComponent<Text>().text = memory.ToString();
     }
 
     public void SetMenuUIActive()
