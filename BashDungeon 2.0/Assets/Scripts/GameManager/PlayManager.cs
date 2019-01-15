@@ -550,6 +550,7 @@ public class PlayManager : MonoBehaviour
             GameObject questToRemove = addedQuests.Find(x => x.GetComponentInChildren<Text>().text.Contains(questText));
             //addedQuests.Remove(questToRemove);
             questToRemove.SetActive(false);
+            memory += 10;
             logWriter.QuestRemovedToLog(questText.Substring(0, 20));
         }
     }

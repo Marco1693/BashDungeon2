@@ -2228,3 +2228,13 @@ BASH DUGEON - LOGS
 
 BASH DUGEON - LOGS
 
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+1/15/2019 10:36:34 AM - quest added - "Risolvi l'indovinell..."
+1/15/2019 10:41:13 AM - quest removed - "Risolvi l'indovinell..."
