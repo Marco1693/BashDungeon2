@@ -1989,6 +1989,11 @@ MonoBehaviour:
     type: 2}
   osso: {fileID: 100000, guid: a117e3161d7aadc4c9632a1f8837c17a, type: 2}
   crateShop: {fileID: 1228077705287334, guid: a4ccca2e399e24d41851f52646f26f0a, type: 2}
+  moonStone: {fileID: 1279751429034790, guid: c8614bd9522328a48bee08dcc5525df8, type: 2}
+  blueCrystal: {fileID: 1759899364991944, guid: c8614bd9522328a48bee08dcc5525df8,
+    type: 2}
+  purpleCrystal: {fileID: 1281285971848524, guid: c8614bd9522328a48bee08dcc5525df8,
+    type: 2}
   pergamenaFoundUI: {fileID: 1720658722714014, guid: 3abc30ecadaf47d4691561663010ad0d,
     type: 2}
   setQuest: {fileID: 1307117074316260, guid: 52c4e1e30467c9242b44f6def6ba0efc, type: 2}
@@ -2762,7 +2767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 331.69995, y: -0.6275501}
+  m_AnchoredPosition: {x: 331.75, y: -0.6275501}
   m_SizeDelta: {x: 38.4, y: 37.755}
   m_Pivot: {x: 0.4999997, y: 0.49999994}
 --- !u!114 &1261226101

@@ -19,8 +19,10 @@ public class ObjectPrefabSelector : MonoBehaviour {
     public GameObject pezzoChiave2;
     public GameObject cuccioloNascosto;
     public GameObject osso;
-    //13/12
     public GameObject crateShop;
+    public GameObject moonStone;
+    public GameObject blueCrystal;
+    public GameObject purpleCrystal;
 
     public GameObject pergamenaFoundUI;
     public GameObject setQuest;
@@ -40,10 +42,8 @@ public class ObjectPrefabSelector : MonoBehaviour {
     public List<GameObject> level2Prefab;
     public List<GameObject> level3Prefab;
     public List<GameObject> level4Prefab;
-    //new lvl
     public List<GameObject> level5Prefab;
-    //processi
-    //public List<GameObject> level6Prefab;
+
     bool isSpawnedProcessi = false;
 
 
@@ -149,12 +149,25 @@ public class ObjectPrefabSelector : MonoBehaviour {
         {
             return crateShop;
         }
+
+        if (nomeOggetto.Contains("moonStone"))
+        {
+            return moonStone;
+        }
+
+        if (nomeOggetto.Contains("blueCrystal"))
+        {
+            return blueCrystal;
+        }
+
+        if(nomeOggetto.Contains("purpleCrystal"))
+        {
+            return blueCrystal;
+        }
         else
         {
             return pergamena;
         }
-
-        
     }
 
     public GameObject PickStandardRoomPrefab()
@@ -207,15 +220,10 @@ public class ObjectPrefabSelector : MonoBehaviour {
         {
             chosenPrefab = level4Prefab[Random.Range(0, level4Prefab.Count)];
         }
-        // new lvl
         else if (level == 5 && level5Prefab != null)
         {
             chosenPrefab = level5Prefab[Random.Range(0, level5Prefab.Count)];
         }
-        /*else if (level == 6 && level6Prefab != null)
-        {
-            chosenPrefab = level6Prefab[Random.Range(0, level6Prefab.Count)];
-        }*/
         else
         {
             chosenPrefab = defaultLevel;

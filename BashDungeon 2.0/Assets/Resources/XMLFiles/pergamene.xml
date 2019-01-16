@@ -153,4 +153,11 @@ Sin quando queste trappole resteranno qui non potrò farti passare, la sicurezza
     <testoDialogo>Putroppo senza del cibo questi cani non si sposteranno facilmente.
 Se solo gli portassi qualcosa da mettere sotto i denti, forse riusciresti a passare.</testoDialogo>
   </npc>
+
+  <npc>
+    <nome>minerNPC</nome>
+    <testoDialogo>Ciao, hai bisogno di un po' di cristalli?
+Se hai dei frammenti di memoria puoi far partire dei processi per l'estrazione di questi cristalli.
+Per iniziare ti regalerò 5 frammenti.</testoDialogo>
+  </npc>
 </bashdungeon>
