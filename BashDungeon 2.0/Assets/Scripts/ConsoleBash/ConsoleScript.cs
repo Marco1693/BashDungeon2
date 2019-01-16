@@ -187,6 +187,10 @@ public class ConsoleScript : MonoBehaviour
                 Ping(splittedMessage);
                 break;
 
+            case "ps":
+                Ps(splittedMessage);
+                break;
+
             case "shutdown":
                 if (gameManager.GetComponent<PlayManager>().FineGioco)
                 {
@@ -1073,6 +1077,18 @@ public class ConsoleScript : MonoBehaviour
         else
         {
             textObj.text += ("il comando ping prevede due parametri\n");
+        }
+    }
+
+    void Ps(String[] splittedMessage)
+    {
+        if(splittedMessage.Length == 1)
+        {
+            //mostra processi
+        }
+        else
+        {
+            textObj.text += ("Il comando ps non prevede altri parametri");
         }
     }
 

@@ -30,8 +30,8 @@ public class MinerNPC : MonoBehaviour
             }
             if(primoIncontro && gameManager.GetComponent<PlayManager>().ClickedObject == gameObject)
             {
-                minerNPC.TestoTxT = ("Per far partire un processo usa il comando \"start\" seguito dal nome del cristallo da cui vuoi estrarre\n") +
-                   ("Per visualizzare lo stato dei processi usa il comando \".......\"");
+                minerNPC.TestoTxT = ("Per far partire un processo usa il comando \".....\" seguito dal nome del cristallo da cui vuoi estrarre\n") +
+                   ("Per visualizzare lo stato dei processi usa il comando \"ps\"");
             }
         }
     }
