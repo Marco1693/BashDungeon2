@@ -47,7 +47,7 @@ public class Oggetto
             }
         }
     }
-    //20/11 rinominabile
+    //rinominabile
     public bool IsRenamable
     {
         get
@@ -61,7 +61,7 @@ public class Oggetto
         }
     }
 
-    //29/11
+    //copiabile
     public bool IsCopiable
     {
         get

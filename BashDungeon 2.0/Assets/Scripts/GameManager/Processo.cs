@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Processo{
 
-    string pid;
+    int pid;
     string nome;
-    float time;
+    string time;
 
 	void Start () {
 		
@@ -15,4 +15,46 @@ public class Processo{
 	void Update () {
 		
 	}
+
+    public Processo(int pid, string nome)
+    {
+        this.pid = pid;
+        this.nome = nome;
+        time ="00:00:00";
+    }
+
+    public int Pid
+    {
+        get
+        {
+            return pid;
+        }
+        set
+        {
+            pid = value;
+        }
+    }
+
+    public string Nome
+    {
+        get
+        {
+            return nome;
+        }
+        set
+        {
+            nome = value;
+        }
+    }
+
+    public string GetTime()
+    {
+        return time;
+    }
+
+    public void SetTime(string ore, string minuti , string secondi)
+    {
+        time = ore + (":") + minuti + (":") + secondi;
+    }
+
 }

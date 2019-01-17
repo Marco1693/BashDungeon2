@@ -1049,7 +1049,7 @@ public class ConsoleScript : MonoBehaviour
         }
         else
         {
-            textObj.text += ("il comando host prevede due parametri\n");
+            textObj.text += ("il comando host prevede un parametro\n");
         }
     }
 
@@ -1076,7 +1076,7 @@ public class ConsoleScript : MonoBehaviour
         }
         else
         {
-            textObj.text += ("il comando ping prevede due parametri\n");
+            textObj.text += ("il comando ping prevede un parametro\n");
         }
     }
 
@@ -1085,10 +1085,35 @@ public class ConsoleScript : MonoBehaviour
         if(splittedMessage.Length == 1)
         {
             //mostra processi
+            textObj.text += "\n PID\tTime\tCMD\n";
+            foreach (Processo processo in gameManager.GetComponent<LevelGeneration>().processi)
+            {
+               //stampa dei processi attivi
+               // textObj.text += processo.get
+            }
         }
         else
         {
             textObj.text += ("Il comando ps non prevede altri parametri");
+        }
+    }
+
+    void Kill(String[] splittedMessage)
+    {
+        if(splittedMessage.Length == 3)
+        {
+            if (splittedMessage[1] == "-STOP")
+            {
+                //Stop process kill -STOP <PID>
+            }
+            if (splittedMessage[1] == "-CONT")
+            {
+                //Resume process kill -CONT <PID>
+            }
+        }
+        else
+        {
+            textObj.text += ("Il comando kill prevede 2 parametri");
         }
     }
 

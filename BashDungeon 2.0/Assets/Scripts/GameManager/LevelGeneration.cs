@@ -26,9 +26,11 @@ public class LevelGeneration : MonoBehaviour
     public TextAsset xmlPergamene;
     string dataToParse;
 
-    //12/12
     public List<Shop> shops = new List<Shop>();
     public int numberOfShops;
+
+    public List<Processo> processi = new List<Processo>();
+    public int PIDs = 0;
     
 
     void Start()
@@ -558,6 +560,12 @@ public class LevelGeneration : MonoBehaviour
                     {
                         item.IsCopiable = true;
                     }*/
+                    if (child.name.Contains("Crystal") || child.name.Contains("Stone"))
+                    {
+                        Processo process = new Processo(PIDs, child.name);
+                        processi.Add(process);
+                        PIDs++;
+                    }
                 }
 
             }
