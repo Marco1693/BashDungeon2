@@ -1109,15 +1109,34 @@ public class ConsoleScript : MonoBehaviour
             if (splittedMessage[1] == "-STOP")
             {
                 //Stop process kill -STOP <PID>
-                
+                if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && x.IsActive)))
+                {
+                    Processo pr = gameManager.GetComponent<LevelGeneration>().processi.Find(x => x.Pid.ToString() == splittedMessage[2]);
+                    pr.IsActive = false;
+                }
+                else if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && !x.IsActive)))
+                {
+                    textObj.text += ("il processo non è in esecuzione\n");
+                }
+                else
+                {
+                    textObj.text += splittedMessage[2] + (" non è un PID valido\n");
+                }
             }
             if (splittedMessage[1] == "-CONT")
             {
                 //Resume process kill -CONT <PID>
                 if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && !x.IsActive)))
                 {
-                    Processo pr = gameManager.GetComponent<LevelGeneration>().processi.Find(x => x.Pid.ToString() == splittedMessage[2]);
-                    pr.IsActive = true;
+                    if (gameManager.GetComponent<PlayManager>().memory > 0)
+                    {
+                        Processo pr = gameManager.GetComponent<LevelGeneration>().processi.Find(x => x.Pid.ToString() == splittedMessage[2]);
+                        pr.IsActive = true;
+                    }
+                    else
+                    {
+                        textObj.text += "non hai abbastanza memoria per l'esecuzione di questo processo";
+                    }
                 }
                 else if(gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && x.IsActive)))
                 {

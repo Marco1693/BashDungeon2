@@ -219,7 +219,7 @@ public class PlayManager : MonoBehaviour
             dialogueText.GetComponent<DialogueController>().SetText("Ecco la pergamena che cercavo !");
         }
 
-        textMoney.GetComponent<Text>().text = Mathf.Round(playerMoney).ToString("n2");
+        textMoney.GetComponent<Text>().text = playerMoney.ToString("n2");
         textMemory.GetComponent<Text>().text = memory.ToString("n2");
         GestioneProcessi();
     }
@@ -599,6 +599,10 @@ public class PlayManager : MonoBehaviour
                 {
                     memory -= 0.10f * Time.deltaTime;
                     playerMoney += 0.10f * Time.deltaTime;
+                }
+                else
+                {
+                    processo.IsActive = false;
                 }
             }
         }
