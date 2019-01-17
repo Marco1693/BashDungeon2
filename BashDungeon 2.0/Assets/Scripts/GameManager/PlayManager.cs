@@ -591,6 +591,7 @@ public class PlayManager : MonoBehaviour
 
     void GestioneProcessi()
     {
+        float sec = 0;
         foreach(Processo processo in GameObject.Find("GameManager").GetComponent<LevelGeneration>().processi)
         {
             if (processo.IsActive)
@@ -599,6 +600,8 @@ public class PlayManager : MonoBehaviour
                 {
                     memory -= 0.10f * Time.deltaTime;
                     playerMoney += 0.10f * Time.deltaTime;
+                    sec += Time.deltaTime;
+                    processo.SetTime(sec);
                 }
                 else
                 {

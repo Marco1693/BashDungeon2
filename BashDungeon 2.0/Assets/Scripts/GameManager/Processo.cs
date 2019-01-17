@@ -46,9 +46,9 @@ public class Processo{
         return time;
     }
 
-    public void SetTime(string ore, string minuti , string secondi)
+    public void SetTime(float secondi)
     {
-        time = ore + (":") + minuti + (":") + secondi;
+        time = (secondi / 3600).ToString() + (":") + (secondi / 60) + (":") + (secondi);
     }
     
     public bool IsActive
