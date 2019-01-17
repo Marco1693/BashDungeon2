@@ -48,7 +48,7 @@ public class PlayManager : MonoBehaviour
     public string ipBuy;
 
     //memoria del player per i processi
-    public int memory;
+    public float memory;
     public GameObject textMemory;
 
     //public List<Prodotto> listaProdotti = new List<Prodotto>();
@@ -219,8 +219,9 @@ public class PlayManager : MonoBehaviour
             dialogueText.GetComponent<DialogueController>().SetText("Ecco la pergamena che cercavo !");
         }
 
-        textMoney.GetComponent<Text>().text = playerMoney.ToString();
-        textMemory.GetComponent<Text>().text = memory.ToString();
+        textMoney.GetComponent<Text>().text = Mathf.Round(playerMoney).ToString("n2");
+        textMemory.GetComponent<Text>().text = memory.ToString("n2");
+        GestioneProcessi();
     }
 
     public void SetMenuUIActive()
@@ -585,6 +586,21 @@ public class PlayManager : MonoBehaviour
         if (playerMoney < 0)
         {
             playerMoney = 0;
+        }
+    }
+
+    void GestioneProcessi()
+    {
+        foreach(Processo processo in GameObject.Find("GameManager").GetComponent<LevelGeneration>().processi)
+        {
+            if (processo.IsActive)
+            {
+                if (memory > 0)
+                {
+                    memory -= 0.10f * Time.deltaTime;
+                    playerMoney += 0.10f * Time.deltaTime;
+                }
+            }
         }
     }
 }

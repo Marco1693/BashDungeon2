@@ -761,7 +761,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000
+  m_Text: 10.00
 --- !u!222 &360233123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -784,8 +784,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 264, y: -2.9999008}
-  m_SizeDelta: {x: 75.4, y: 40}
+  m_AnchoredPosition: {x: 248.79, y: -2.9999008}
+  m_SizeDelta: {x: 105.8, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &389695163 stripped
 GameObject:
@@ -1682,6 +1682,7 @@ MonoBehaviour:
   rootPrefab: {fileID: 1399195080153628, guid: 0735d7fa7a7ea0844bf516994b13dc01, type: 2}
   xmlPergamene: {fileID: 4900000, guid: 39c84a36190309243a4bcf4173328717, type: 3}
   numberOfShops: 2
+  PIDs: 0
 --- !u!4 &678893741
 Transform:
   m_ObjectHideFlags: 0

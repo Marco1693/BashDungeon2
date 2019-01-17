@@ -1098,7 +1098,7 @@ public class ConsoleScript : MonoBehaviour
         }
         else
         {
-            textObj.text += ("Il comando ps non prevede altri parametri");
+            textObj.text += ("Il comando ps non prevede altri parametri\n");
         }
     }
 
@@ -1109,15 +1109,33 @@ public class ConsoleScript : MonoBehaviour
             if (splittedMessage[1] == "-STOP")
             {
                 //Stop process kill -STOP <PID>
+                
             }
             if (splittedMessage[1] == "-CONT")
             {
                 //Resume process kill -CONT <PID>
+                if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && !x.IsActive)))
+                {
+                    Processo pr = gameManager.GetComponent<LevelGeneration>().processi.Find(x => x.Pid.ToString() == splittedMessage[2]);
+                    pr.IsActive = true;
+                }
+                else if(gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && x.IsActive)))
+                {
+                    textObj.text += ("il processo è già in esecuzione\n");
+                }
+                else
+                {
+                    textObj.text += splittedMessage[2] + (" non è un PID valido\n");
+                }
+            }
+            else
+            {
+                textObj.text += splittedMessage[1] + " non è un parametro valido\n";
             }
         }
         else
         {
-            textObj.text += ("Il comando kill prevede 2 parametri");
+            textObj.text += ("Il comando kill prevede 2 parametri\n");
         }
     }
 
