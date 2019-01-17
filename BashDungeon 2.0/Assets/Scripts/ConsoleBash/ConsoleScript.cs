@@ -191,6 +191,10 @@ public class ConsoleScript : MonoBehaviour
                 Ps(splittedMessage);
                 break;
 
+            case "kill":
+                Kill(splittedMessage);
+                break;
+
             case "shutdown":
                 if (gameManager.GetComponent<PlayManager>().FineGioco)
                 {
@@ -1085,11 +1089,11 @@ public class ConsoleScript : MonoBehaviour
         if(splittedMessage.Length == 1)
         {
             //mostra processi
-            textObj.text += "\n PID\tTime\tCMD\n";
+            textObj.text += "PID\t\tTime\t\tCMD\n";
             foreach (Processo processo in gameManager.GetComponent<LevelGeneration>().processi)
             {
-               //stampa dei processi attivi
-               // textObj.text += processo.get
+                //stampa dei processi 
+                textObj.text += processo.Pid + ("\t\t") + processo.GetTime() + ("\t") + processo.Nome +("\n");
             }
         }
         else

@@ -8,13 +8,7 @@ public class Processo{
     string nome;
     string time;
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
+    bool isActive = false;
 
     public Processo(int pid, string nome)
     {
@@ -56,5 +50,17 @@ public class Processo{
     {
         time = ore + (":") + minuti + (":") + secondi;
     }
+    
+    public bool IsActive
+    {
+        get
+        {
+            return isActive;
+        }
 
+        set
+        {
+            isActive = value;
+        }
+    }
 }
