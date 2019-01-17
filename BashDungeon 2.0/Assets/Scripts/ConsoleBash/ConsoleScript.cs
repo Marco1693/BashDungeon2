@@ -1106,50 +1106,53 @@ public class ConsoleScript : MonoBehaviour
     {
         if(splittedMessage.Length == 3)
         {
-            if (splittedMessage[1] == "-STOP")
+            if (splittedMessage[1] == "-STOP" || splittedMessage[1] == "-CONT")
             {
-                //Stop process kill -STOP <PID>
-                if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && x.IsActive)))
+                if (splittedMessage[1] == "-STOP")
                 {
-                    Processo pr = gameManager.GetComponent<LevelGeneration>().processi.Find(x => x.Pid.ToString() == splittedMessage[2]);
-                    pr.IsActive = false;
-                }
-                else if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && !x.IsActive)))
-                {
-                    textObj.text += ("il processo non è in esecuzione\n");
-                }
-                else
-                {
-                    textObj.text += splittedMessage[2] + (" non è un PID valido\n");
-                }
-            }
-            if (splittedMessage[1] == "-CONT")
-            {
-                //Resume process kill -CONT <PID>
-                if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && !x.IsActive)))
-                {
-                    if (gameManager.GetComponent<PlayManager>().memory > 0)
+                    //Stop process kill -STOP <PID>
+                    if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && x.IsActive)))
                     {
                         Processo pr = gameManager.GetComponent<LevelGeneration>().processi.Find(x => x.Pid.ToString() == splittedMessage[2]);
-                        pr.IsActive = true;
+                        pr.IsActive = false;
+                    }
+                    else if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && !x.IsActive)))
+                    {
+                        textObj.text += ("il processo non è in esecuzione\n");
                     }
                     else
                     {
-                        textObj.text += "non hai abbastanza memoria per l'esecuzione di questo processo";
+                        textObj.text += splittedMessage[2] + (" non è un PID valido\n");
                     }
                 }
-                else if(gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && x.IsActive)))
+                if (splittedMessage[1] == "-CONT")
                 {
-                    textObj.text += ("il processo è già in esecuzione\n");
-                }
-                else
-                {
-                    textObj.text += splittedMessage[2] + (" non è un PID valido\n");
+                    //Resume process kill -CONT <PID>
+                    if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && !x.IsActive)))
+                    {
+                        if (gameManager.GetComponent<PlayManager>().memory > 0)
+                        {
+                            Processo pr = gameManager.GetComponent<LevelGeneration>().processi.Find(x => x.Pid.ToString() == splittedMessage[2]);
+                            pr.IsActive = true;
+                        }
+                        else
+                        {
+                            textObj.text += "non hai abbastanza memoria per l'esecuzione di questo processo\n";
+                        }
+                    }
+                    else if (gameManager.GetComponent<LevelGeneration>().processi.Exists(x => (x.Pid.ToString() == splittedMessage[2] && x.IsActive)))
+                    {
+                        textObj.text += ("il processo è già in esecuzione\n");
+                    }
+                    else
+                    {
+                        textObj.text += splittedMessage[2] + (" non è un PID valido\n");
+                    }
                 }
             }
             else
             {
-                textObj.text += splittedMessage[1] + " non è un parametro valido\n";
+                textObj.text += splittedMessage[1] + (" non è un parametro valido\n");
             }
         }
         else
