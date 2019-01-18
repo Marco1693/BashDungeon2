@@ -230,6 +230,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4304322329097810}
   - component: {fileID: 95332097601754512}
+  - component: {fileID: 114840467603727516}
+  - component: {fileID: 114269633025623048}
+  - component: {fileID: 114974424518975158}
   m_Layer: 0
   m_Name: Devil
   m_TagString: Untagged
@@ -1799,6 +1802,41 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114269633025623048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239260253016426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34780e57c45c68b46a829f8ca712d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMadeVisible: 0
+  oggettiGOArchiviati: []
+--- !u!114 &114840467603727516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239260253016426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8abc4555fdd5af4a9b4b1e1e2e0897f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114974424518975158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239260253016426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763aaff5ba28970429cc02dededdf87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137828757849804070
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
