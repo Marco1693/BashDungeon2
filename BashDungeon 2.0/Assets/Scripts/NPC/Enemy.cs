@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour {
 	void Start () {
         animator = this.GetComponent<Animator>();
         gameManager = GameObject.Find("GameManager");
-        currentRoom = gameManager.GetComponent<LevelGeneration>().GetRoomByName(this.gameObject.GetComponentInParent<Transform>().name);
+        currentRoom = gameManager.GetComponent<LevelGeneration>().GetRoomByName(this.transform.parent.name);
         player = GameObject.Find("Player");
 	}
 	
