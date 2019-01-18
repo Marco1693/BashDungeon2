@@ -7,6 +7,7 @@ public class Processo{
     int pid;
     string nome;
     string time;
+    float timer;
 
     bool isActive = false;
 
@@ -15,6 +16,7 @@ public class Processo{
         this.pid = pid;
         this.nome = nome;
         time ="00:00:00";
+        timer = 0;
     }
 
     public int Pid
@@ -41,14 +43,30 @@ public class Processo{
         }
     }
 
+    public float Timer
+    {
+        get
+        {
+            return timer;
+        }
+        set
+        {
+            timer = value;
+        }
+    }
+
     public string GetTime()
     {
         return time;
     }
 
-    public void SetTime(float secondi)
+    public void SetTime()
     {
-        time = (secondi / 3600).ToString() + (":") + (secondi / 60) + (":") + (secondi);
+        string minutes,seconds,hours;
+        minutes = Mathf.Floor(timer / 60).ToString("00");
+        seconds = (timer % 60).ToString("00");
+        hours = Mathf.Floor(timer / 3600).ToString("00");
+        time = (hours + ":" + minutes + ":" + seconds);
     }
     
     public bool IsActive
