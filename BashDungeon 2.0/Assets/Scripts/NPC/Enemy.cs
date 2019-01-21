@@ -9,8 +9,10 @@ public class Enemy : MonoBehaviour {
     public Room currentRoom;
     GameObject gameManager;
     GameObject player;
-    NavMeshAgent m_agent;
+    //NavMeshAgent m_agent;
     Vector3 playerPosition;
+   // Rigidbody m_Rigidbody;
+    public float m_Speed = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +20,7 @@ public class Enemy : MonoBehaviour {
         gameManager = GameObject.Find("GameManager");
         currentRoom = gameManager.GetComponent<LevelGeneration>().GetRoomByName(this.transform.parent.name);
         player = GameObject.Find("Player");
+        //m_Rigidbody = this.gameObject.GetComponent<Rigidbody>();
         //m_agent = this.gameObject.GetComponent<NavMeshAgent>();
 	}
 	
@@ -33,7 +36,8 @@ public class Enemy : MonoBehaviour {
         {
             animator.SetBool("PlayerIsHere", true);
             transform.LookAt(playerPosition);
-            transform.forward += transform.forward * 0.5f * Time.deltaTime;
+            //m_Rigidbody.velocity = transform.forward * m_Speed *Time.deltaTime;
+            transform.position += transform.forward * 2 * Time.deltaTime;
             //m_agent.destination = playerPosition;
         }
         else
