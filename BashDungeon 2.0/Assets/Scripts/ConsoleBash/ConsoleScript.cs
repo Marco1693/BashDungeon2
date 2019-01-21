@@ -1106,6 +1106,19 @@ public class ConsoleScript : MonoBehaviour
     {
         if(splittedMessage.Length == 3)
         {
+            if(splittedMessage[1]=="-STOP" && splittedMessage[2]== "Devil")
+            {
+                if(playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == "Devil"))
+                {
+                    //blocca il movimento del nemico
+                    GameObject enemy = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[2]);
+                    enemy.GetComponent<Enemy>().IsBlocked = true;
+                }
+                else
+                {
+                    textObj.text += "nessun nemico presente nella stanza\n";
+                }
+            }
             if (splittedMessage[1] == "-STOP" || splittedMessage[1] == "-CONT")
             {
                 if (splittedMessage[1] == "-STOP")
@@ -1120,7 +1133,7 @@ public class ConsoleScript : MonoBehaviour
                     {
                         textObj.text += ("il processo non è in esecuzione\n");
                     }
-                    else
+                    else if(splittedMessage[2] != "Devil")
                     {
                         textObj.text += splittedMessage[2] + (" non è un PID valido\n");
                     }

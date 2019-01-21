@@ -11,7 +11,9 @@ public class Enemy : MonoBehaviour {
     GameObject player;
     //NavMeshAgent m_agent;
     Vector3 playerPosition;
+    Vector3 enemyPosition;
     public float m_Speed = 0.5f;
+    bool isBlocked = false;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +21,7 @@ public class Enemy : MonoBehaviour {
         gameManager = GameObject.Find("GameManager");
         currentRoom = gameManager.GetComponent<LevelGeneration>().GetRoomByName(this.transform.parent.name);
         player = GameObject.Find("Player");
+        enemyPosition = this.gameObject.transform.position;
         //m_agent = this.gameObject.GetComponent<NavMeshAgent>();
 	}
 	
@@ -34,24 +37,42 @@ public class Enemy : MonoBehaviour {
         {
             animator.SetBool("PlayerIsHere", true);
             transform.LookAt(playerPosition);
-            if(animator.GetBool("PlayerHit") == false)
+            if(animator.GetBool("PlayerHit") == false && !isBlocked)
                 transform.position += transform.forward * 2 * Time.deltaTime;
             //m_agent.destination = playerPosition;
         }
         else
         {
             animator.SetBool("PlayerIsHere", false);
+            transform.position = enemyPosition;
+            isBlocked = false;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        animator.SetBool("PlayerHit",true);
-        Debug.Log("player colpito");
+        if (other.gameObject.name == "Player")
+        {
+            animator.SetBool("PlayerHit", true);
+            Debug.Log("player colpito");
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         animator.SetBool("PlayerHit", false);
+    }
+
+    public bool IsBlocked
+    {
+        get
+        {
+            return isBlocked;
+        }
+
+        set
+        {
+            isBlocked = value;
+        }
     }
 }
