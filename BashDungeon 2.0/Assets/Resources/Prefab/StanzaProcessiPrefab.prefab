@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 4534226550549206}
   - component: {fileID: 114077744209267518}
   - component: {fileID: 114757793431530630}
+  - component: {fileID: 33756294816607416}
   m_Layer: 0
   m_Name: moonStone
   m_TagString: Untagged
@@ -1102,6 +1103,7 @@ GameObject:
   - component: {fileID: 114223898412245230}
   - component: {fileID: 195742570876502874}
   - component: {fileID: 23382156217580914}
+  - component: {fileID: 65024618685216962}
   m_Layer: 0
   m_Name: Devil
   m_TagString: Untagged
@@ -2937,7 +2939,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a45bf9c279754524199c02e869550db1, type: 2}
+  - {fileID: 2100000, guid: 9a069461a20472941bdf6f9abebd9350, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3547,6 +3549,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1748113484229488}
   m_Mesh: {fileID: 4300000, guid: bca750044050e1144ba752d3ee6cfd05, type: 3}
+--- !u!33 &33756294816607416
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279751429034790}
+  m_Mesh: {fileID: 4300002, guid: 08c9001095037d64283c450bdb8ef751, type: 3}
 --- !u!33 &33770567368316854
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -3611,6 +3620,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &65024618685216962
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757864689920034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!65 &65737824292206620
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4084,6 +4105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8abc4555fdd5af4a9b4b1e1e2e0897f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Speed: 0.5
 --- !u!114 &114331826308810296
 MonoBehaviour:
   m_ObjectHideFlags: 1

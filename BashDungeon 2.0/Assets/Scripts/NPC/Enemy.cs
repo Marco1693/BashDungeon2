@@ -11,7 +11,6 @@ public class Enemy : MonoBehaviour {
     GameObject player;
     //NavMeshAgent m_agent;
     Vector3 playerPosition;
-   // Rigidbody m_Rigidbody;
     public float m_Speed = 0.5f;
 
 	// Use this for initialization
@@ -20,7 +19,6 @@ public class Enemy : MonoBehaviour {
         gameManager = GameObject.Find("GameManager");
         currentRoom = gameManager.GetComponent<LevelGeneration>().GetRoomByName(this.transform.parent.name);
         player = GameObject.Find("Player");
-        //m_Rigidbody = this.gameObject.GetComponent<Rigidbody>();
         //m_agent = this.gameObject.GetComponent<NavMeshAgent>();
 	}
 	
@@ -36,13 +34,24 @@ public class Enemy : MonoBehaviour {
         {
             animator.SetBool("PlayerIsHere", true);
             transform.LookAt(playerPosition);
-            //m_Rigidbody.velocity = transform.forward * m_Speed *Time.deltaTime;
-            transform.position += transform.forward * 2 * Time.deltaTime;
+            if(animator.GetBool("PlayerHit") == false)
+                transform.position += transform.forward * 2 * Time.deltaTime;
             //m_agent.destination = playerPosition;
         }
         else
         {
             animator.SetBool("PlayerIsHere", false);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        animator.SetBool("PlayerHit",true);
+        Debug.Log("player colpito");
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        animator.SetBool("PlayerHit", false);
     }
 }
