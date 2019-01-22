@@ -44,7 +44,10 @@ public class Shop{
         Prodotto prodotto = new Prodotto("rm <Nemico>", 15f, gameManager.GetComponent<ObjectPrefabSelector>().Axe);
         listaProdotti.Add(prodotto);
 
-        Prodotto test = new Prodotto("Pozione 20HP", 10f, gameManager.GetComponent<ObjectPrefabSelector>().Potion);
-        listaProdotti.Add(test);
+        Prodotto pozione20 = new Prodotto("Pozione 20HP", 10f, gameManager.GetComponent<ObjectPrefabSelector>().Potion);
+        listaProdotti.Add(pozione20);
+
+        Prodotto pozione40 = new Prodotto("Pozione 40HP", 15f, gameManager.GetComponent<ObjectPrefabSelector>().BigPotion);
+        listaProdotti.Add(pozione40);
     }
 }

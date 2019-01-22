@@ -66,6 +66,9 @@ public class BuyButton : MonoBehaviour {
             case "Pozione 20HP":
                 GameObject.Find("Bar").GetComponent<HealthBar>().HealthPotion(20);
                 break;
+            case "Pozione 40HP":
+                GameObject.Find("Bar").GetComponent<HealthBar>().HealthPotion(40);
+                break;
             default:
                 //il comando non esiste
                 break;
