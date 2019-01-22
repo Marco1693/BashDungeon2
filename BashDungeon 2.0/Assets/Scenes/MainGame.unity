@@ -151,7 +151,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1031,8 +1031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -2.0899963, y: -90}
+  m_AnchoredPosition: {x: 0, y: 0.000011444092}
+  m_SizeDelta: {x: -2.0899963, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &463640753
 MonoBehaviour:
@@ -2201,6 +2201,7 @@ MonoBehaviour:
     type: 2}
   axe: {fileID: 21300000, guid: 632aebc77b7de4e80ba2a20eac8da5da, type: 3}
   potion: {fileID: 21300000, guid: f7933b7818bcdc645b44a89575b745b6, type: 3}
+  bigPotion: {fileID: 21300000, guid: aa3729215eecd0346bd6f8cf29414059, type: 3}
   lootPrefab:
   - {fileID: 1157450812502990, guid: ee172383ba6a14e498afe0c0eb379f9b, type: 2}
   - {fileID: 1976772957137708, guid: 3777d2cac626ede4e83be5aaada296c5, type: 2}
@@ -2383,7 +2384,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1889868129196296, guid: 46977b6bfff243b4480e255f49b0986b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224871596241031538, guid: 46977b6bfff243b4480e255f49b0986b,
         type: 2}
@@ -2582,7 +2583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &713314584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2974,7 +2975,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 120215349}
   m_HandleRect: {fileID: 120215348}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
