@@ -2821,3 +2821,13 @@ BASH DUGEON - LOGS
 
 BASH DUGEON - LOGS
 
+
+
+BASH DUGEON - LOGS
+
+1/22/2019 12:33:36 PM - quest added - "Elimina il barile ch..."
+1/22/2019 12:34:22 PM - quest removed - "Elimina il barile ch..."
+
+
+BASH DUGEON - LOGS
+
