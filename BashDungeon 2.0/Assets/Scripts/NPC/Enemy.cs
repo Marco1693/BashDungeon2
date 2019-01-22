@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour {
     Vector3 enemyPosition;
     public float m_Speed = 0.5f;
     bool isBlocked = false;
+    float attackDamage = 10;
+    bool attackEnd = false;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +31,7 @@ public class Enemy : MonoBehaviour {
 	void Update () {
         playerPosition = player.transform.position;
         Fly();
+        Attack();
 	}
 
     public void Fly()
@@ -46,6 +49,10 @@ public class Enemy : MonoBehaviour {
             animator.SetBool("PlayerIsHere", false);
             transform.position = enemyPosition;
             isBlocked = false;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Fly"))
+        {
+            attackEnd = false;
         }
     }
 
@@ -73,6 +80,15 @@ public class Enemy : MonoBehaviour {
         set
         {
             isBlocked = value;
+        }
+    }
+
+    void Attack()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !attackEnd)
+        {
+            GameObject.Find("Bar").GetComponent<HealthBar>().LoseHealth(attackDamage);
+            attackEnd = true;
         }
     }
 }
