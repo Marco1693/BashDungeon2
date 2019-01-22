@@ -29,10 +29,22 @@ public class BuyButton : MonoBehaviour {
     {
         if (gameManager.GetComponent<PlayManager>().playerMoney >= (prodotto.Prezzo + shop.GetSpedizione()))
         {
-            gameManager.GetComponent<PlayManager>().SubMoney(prodotto.Prezzo + shop.GetSpedizione());
-            gameManager.GetComponent<PlayManager>().listaComprati.Add(prodotto);
-            AttivaComando(prodotto.Nome);
-            Destroy(this.gameObject);
+            if (!prodotto.Nome.Contains("Pozione"))
+            {
+                gameManager.GetComponent<PlayManager>().SubMoney(prodotto.Prezzo + shop.GetSpedizione());
+                gameManager.GetComponent<PlayManager>().listaComprati.Add(prodotto);
+                AttivaComando(prodotto.Nome);
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                if(GameObject.Find("Bar").GetComponent<HealthBar>().health < 100)
+                {
+                    gameManager.GetComponent<PlayManager>().SubMoney(prodotto.Prezzo + shop.GetSpedizione());
+                    gameManager.GetComponent<PlayManager>().listaComprati.Add(prodotto);
+                    AttivaComando(prodotto.Nome);
+                }
+            }
         }
         else
         {
@@ -48,8 +60,11 @@ public class BuyButton : MonoBehaviour {
     {
         switch (comando)
         {
-            case "kill":
-                //attiva comando kill
+            case "rm <Nemico>":
+                //attiva comando rm per eliminare il nemico
+                break;
+            case "Pozione 20HP":
+                GameObject.Find("Bar").GetComponent<HealthBar>().HealthPotion(20);
                 break;
             default:
                 //il comando non esiste

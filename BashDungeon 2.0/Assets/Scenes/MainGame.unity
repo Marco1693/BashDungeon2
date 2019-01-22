@@ -2200,7 +2200,7 @@ MonoBehaviour:
   defaultLevel: {fileID: 1473213055824910, guid: 561f7aaddf5aed74fb5618bd1ee01c2f,
     type: 2}
   axe: {fileID: 21300000, guid: 632aebc77b7de4e80ba2a20eac8da5da, type: 3}
-  dragon: {fileID: 21300000, guid: 87dbc864affd84f419c175471a50bd44, type: 3}
+  potion: {fileID: 21300000, guid: f33eb9b1e9ef8084db50e364d69a87dc, type: 3}
   lootPrefab:
   - {fileID: 1157450812502990, guid: ee172383ba6a14e498afe0c0eb379f9b, type: 2}
   - {fileID: 1976772957137708, guid: 3777d2cac626ede4e83be5aaada296c5, type: 2}

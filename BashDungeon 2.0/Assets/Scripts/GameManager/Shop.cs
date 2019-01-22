@@ -41,10 +41,10 @@ public class Shop{
     public void ProdottiInVendita()
     {
         GameObject gameManager = GameObject.Find("GameManager");
-        Prodotto prodotto = new Prodotto("kill", 5f, gameManager.GetComponent<ObjectPrefabSelector>().Axe);
+        Prodotto prodotto = new Prodotto("rm <Nemico>", 15f, gameManager.GetComponent<ObjectPrefabSelector>().Axe);
         listaProdotti.Add(prodotto);
 
-        Prodotto test = new Prodotto("test", 7.22f, gameManager.GetComponent<ObjectPrefabSelector>().Dragon);
+        Prodotto test = new Prodotto("Pozione 20HP", 10f, gameManager.GetComponent<ObjectPrefabSelector>().Potion);
         listaProdotti.Add(test);
     }
 }

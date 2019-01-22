@@ -32,7 +32,7 @@ public class ObjectPrefabSelector : MonoBehaviour {
     public GameObject defaultLevel;
 
     public Sprite axe;
-    public Sprite dragon;
+    public Sprite potion;
 
     public List<GameObject> lootPrefab;
 
@@ -265,16 +265,16 @@ public class ObjectPrefabSelector : MonoBehaviour {
         }
     }
 
-    public Sprite Dragon
+    public Sprite Potion
     {
         get
         {
-            return dragon;
+            return potion;
         }
 
         set
         {
-            dragon = value;
+            potion = value;
         }
     }
 
