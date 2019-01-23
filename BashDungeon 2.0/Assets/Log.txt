@@ -2899,3 +2899,37 @@ BASH DUGEON - LOGS
 
 BASH DUGEON - LOGS
 
+
+
+BASH DUGEON - LOGS
+
+1/23/2019 11:11:57 AM - scroll read - "Utilizza il comando ..."
+1/23/2019 11:12:07 AM - scroll read - "Se vuoi spostarti in..."
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+1/23/2019 11:13:57 AM - scroll read - "Utilizza il comando ..."
+1/23/2019 11:14:05 AM - scroll read - "Se vuoi spostarti in..."
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+
+1/23/2019 11:41:42 AM - scroll read - "Utilizza il comando ..."
+1/23/2019 11:41:52 AM - scroll read - "Se vuoi spostarti in..."
+
+
+BASH DUGEON - LOGS
+
