@@ -62,6 +62,7 @@ public class BuyButton : MonoBehaviour {
         {
             case "rm <Nemico>":
                 //attiva comando rm per eliminare il nemico
+                GameObject.Find("Console").GetComponent<ConsoleScript>().RmBought = true;
                 break;
             case "Pozione 20HP":
                 GameObject.Find("Bar").GetComponent<HealthBar>().HealthPotion(20);

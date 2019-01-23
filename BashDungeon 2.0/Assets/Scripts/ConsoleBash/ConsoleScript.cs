@@ -20,6 +20,7 @@ public class ConsoleScript : MonoBehaviour
     GameObject consoleText;
     List<string> oggettiLs = new List<string>();
     List<string> stanzeLs = new List<string>();
+    bool rmBought = false;
 
 
     //GameObject consoleCanvas;
@@ -608,7 +609,7 @@ public class ConsoleScript : MonoBehaviour
             {
                 textObj.text += ("Non è presente nessun oggetto col nome di " + splittedMessage[1] + " in questa stanza :o\n");
             }
-            //rinomina 21/11
+            //rinomina 
             if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == splittedMessage[1]))
                 if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]).IsRenamable
                     && !splittedMessage[2].Contains("/"))
@@ -793,7 +794,22 @@ public class ConsoleScript : MonoBehaviour
 
         if (splittedMessage.Length == 2)
         {
-            if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == splittedMessage[1]))
+            if(splittedMessage[1]== "Devil" && rmBought && playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == splittedMessage[1]))
+            {
+                GameObject selectedObj;
+                Oggetto selectedOggetto;
+
+                selectedObj = GameObject.Find("/" + playerGO.GetComponent<PlayerMovement>().currentRoom.nomeStanza + "/" + splittedMessage[1]);
+                selectedOggetto = playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]);
+                if (selectedObj == gameManager.GetComponent<PlayManager>().ClickedObject)
+                {
+                    gameManager.GetComponent<PlayManager>().ClickedObject = null;
+                }
+                playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Remove(selectedOggetto);
+                selectedObj.GetComponent<Enemy>().Die();
+                
+            }
+            if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == splittedMessage[1]) && !(splittedMessage[1] =="Devil"))
             {
                 if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]).IsRemovable)
                 {
@@ -1179,6 +1195,19 @@ public class ConsoleScript : MonoBehaviour
         if (splittedMessage.Length == 1)
         {
             SceneManager.LoadScene("Credits");
+        }
+    }
+
+    public bool RmBought
+    {
+        get
+        {
+            return rmBought;
+        }
+
+        set
+        {
+            rmBought = value;
         }
     }
 }

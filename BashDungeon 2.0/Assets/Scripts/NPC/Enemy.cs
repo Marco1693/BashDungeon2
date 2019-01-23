@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.AI
 
 public class Enemy : MonoBehaviour {
 
@@ -90,5 +90,17 @@ public class Enemy : MonoBehaviour {
             GameObject.Find("Bar").GetComponent<HealthBar>().LoseHealth(attackDamage);
             attackEnd = true;
         }
+    }
+    
+    public void Die()
+    {
+        animator.SetBool("EnemyDeath", true);
+        StartCoroutine(WaitForDeath());
+    }
+
+    IEnumerator WaitForDeath()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(this);
     }
 }
