@@ -81,6 +81,10 @@ ES: grep pa* .    Ricerca la presenza di un gruppo di caratteri che inizia con "
   <pergamena>
     <testo>Puoi utilizzare il comando "ping", seguito da un indirizzo, per verificare la distanza di uno shop. Maggiore sarà il tempo di risposta maggiori saranno i prezzi dello shop</testo>
   </pergamena>
+
+  <pergamena>
+    <testo>Per bloccare il movimento di un nemico, puoi usare il comando "kill" seguito dall'opzione -STOP e dal nome di questo.</testo>
+  </pergamena>
   
   	<pergamenaTutorial>
       <nome>Cd</nome>
