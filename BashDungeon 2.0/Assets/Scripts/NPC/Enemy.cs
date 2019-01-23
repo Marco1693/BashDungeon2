@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour {
     Vector3 enemyPosition;
     public float m_Speed = 0.5f;
     bool isBlocked = false;
-    float attackDamage = 10;
+    public float attackDamage = 10;
     bool attackEnd = false;
 
 	// Use this for initialization
@@ -100,7 +100,7 @@ public class Enemy : MonoBehaviour {
 
     IEnumerator WaitForDeath()
     {
-        yield return new WaitForSeconds(1.5f);
-        Destroy(this);
+        yield return new WaitForSeconds(2.5f);
+        Destroy(gameObject);
     }
 }

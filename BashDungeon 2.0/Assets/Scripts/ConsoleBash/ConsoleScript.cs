@@ -809,6 +809,20 @@ public class ConsoleScript : MonoBehaviour
                 selectedObj.GetComponent<Enemy>().Die();
                 
             }
+            else
+            {
+                if (!rmBought && playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto =="Devil") && splittedMessage[1] == "Devil")
+                {
+                    textObj.text += ("Non posso eliminarlo!\n");
+                }
+                else
+                {
+                    if (splittedMessage[1] == "Devil")
+                    {
+                        textObj.text += "non è presente nessun " + splittedMessage[1] + " in questa stanza \n";
+                    }
+                }
+            }
             if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Exists(x => x.nomeOggetto == splittedMessage[1]) && !(splittedMessage[1] =="Devil"))
             {
                 if (playerGO.GetComponent<PlayerMovement>().currentRoom.oggetti.Find(x => x.nomeOggetto == splittedMessage[1]).IsRemovable)
@@ -833,7 +847,10 @@ public class ConsoleScript : MonoBehaviour
             }
             else
             {
-                textObj.text += ("Non è presente nessun oggetto col nome di " + splittedMessage[1] + " in questa stanza :o\n");
+                if (splittedMessage[1] != "Devil")
+                {
+                    textObj.text += ("Non è presente nessun oggetto col nome di " + splittedMessage[1] + " in questa stanza :o\n");
+                }
             }
         }
         else
