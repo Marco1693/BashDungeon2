@@ -40,8 +40,10 @@ public class Enemy : MonoBehaviour {
         {
             animator.SetBool("PlayerIsHere", true);
             transform.LookAt(playerPosition);
-            if(animator.GetBool("PlayerHit") == false && !isBlocked)
+            if (animator.GetBool("PlayerHit") == false && !isBlocked && animator.GetCurrentAnimatorStateInfo(0).IsName("Fly"))
+            {
                 transform.position += transform.forward * 2 * Time.deltaTime;
+            }
             //m_agent.destination = playerPosition;
         }
         else
