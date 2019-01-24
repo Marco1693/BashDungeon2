@@ -34,6 +34,7 @@ public class ObjectPrefabSelector : MonoBehaviour {
     public Sprite axe;
     public Sprite potion;
     public Sprite bigPotion;
+    public Sprite filler;
 
     public List<GameObject> lootPrefab;
 
@@ -292,4 +293,16 @@ public class ObjectPrefabSelector : MonoBehaviour {
         }
     }
 
+    public Sprite Filler
+    {
+        get
+        {
+            return filler;
+        }
+
+        set
+        {
+            filler = value;
+        }
+    }
 }

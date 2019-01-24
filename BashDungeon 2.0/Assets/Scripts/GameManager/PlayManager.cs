@@ -566,13 +566,26 @@ public class PlayManager : MonoBehaviour
 
     public void AddProduct(string nome, float prezzo, Sprite icon, float spedizione) //spawn gameObject
     {
-        
-        GameObject newProduct = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().product) as GameObject;
-        newProduct.transform.SetParent(listOfProducts.transform, false);
-        newProduct.GetComponentsInChildren<Text>()[0].text = nome;
-        newProduct.GetComponentsInChildren<Text>()[1].text = ("Prezzo: ") + (prezzo) + ("\n") + ("Costi di spedizione: ") + (spedizione);
-        newProduct.transform.Find("Image").gameObject.GetComponent<Image>().sprite = icon;
-        addedProducts.Add(newProduct);
+        if (nome != "Filler")
+        {
+            GameObject newProduct = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().product) as GameObject;
+            newProduct.transform.SetParent(listOfProducts.transform, false);
+            newProduct.GetComponentsInChildren<Text>()[0].text = nome;
+            newProduct.GetComponentsInChildren<Text>()[1].text = ("Prezzo: ") + (prezzo) + ("\n") + ("Costi di spedizione: ") + (spedizione);
+            newProduct.transform.Find("Image").gameObject.GetComponent<Image>().sprite = icon;
+            addedProducts.Add(newProduct);
+        }
+        else
+        {
+            //fix scrollbar temporaneo
+            GameObject filler = Instantiate(gameObject.GetComponent<ObjectPrefabSelector>().product) as GameObject;
+            filler.transform.SetParent(listOfProducts.transform, false);
+            filler.GetComponentsInChildren<Text>()[0].text = "";
+            filler.GetComponentsInChildren<Text>()[1].text = "";
+            filler.transform.Find("Image").gameObject.GetComponent<Image>().sprite = icon;
+            addedProducts.Add(filler);
+
+        }
     }
 
     public void AddMoney(float amount)

@@ -49,5 +49,9 @@ public class Shop{
 
         Prodotto pozione40 = new Prodotto("Pozione 40HP", 15f, gameManager.GetComponent<ObjectPrefabSelector>().BigPotion);
         listaProdotti.Add(pozione40);
+
+        //filler per la scrollbar
+        Prodotto filler = new Prodotto("Filler", 0, gameManager.GetComponent<ObjectPrefabSelector>().Filler);
+        listaProdotti.Add(filler);
     }
 }

@@ -22,6 +22,10 @@ public class BuyButton : MonoBehaviour {
         ip = gameManager.GetComponent<PlayManager>().ipBuy;
         shop = gameManager.GetComponent<LevelGeneration>().shops.Find(x => (x.GetIp()+("\n")) == ip);
         prodotto = shop.listaProdotti.Find(x => x.Nome == nomeProdotto);
+        if(nomeProdotto == "")
+        {
+            prodotto = shop.listaProdotti.Find(x => x.Nome == "Filler");
+        }
         alert = GameObject.Find("Money").GetComponent<Animation>();
     }
 	
@@ -29,7 +33,7 @@ public class BuyButton : MonoBehaviour {
     {
         if (gameManager.GetComponent<PlayManager>().playerMoney >= (prodotto.Prezzo + shop.GetSpedizione()))
         {
-            if (!prodotto.Nome.Contains("Pozione"))
+            if (!prodotto.Nome.Contains("Pozione") && prodotto.Nome != "Filler")
             {
                 gameManager.GetComponent<PlayManager>().SubMoney(prodotto.Prezzo + shop.GetSpedizione());
                 gameManager.GetComponent<PlayManager>().listaComprati.Add(prodotto);
