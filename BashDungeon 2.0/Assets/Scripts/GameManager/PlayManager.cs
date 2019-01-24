@@ -595,8 +595,7 @@ public class PlayManager : MonoBehaviour
 
     public void SubMoney(float amount)
     {
-        playerMoney -= amount;
-        if (playerMoney < 0)
+       if((playerMoney-amount) <= 0)
         {
             playerMoney = 0;
         }

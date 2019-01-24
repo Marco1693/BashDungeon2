@@ -85,6 +85,10 @@ ES: grep pa* .    Ricerca la presenza di un gruppo di caratteri che inizia con "
   <pergamena>
     <testo>Per bloccare il movimento di un nemico, puoi usare il comando "kill" seguito dall'opzione -STOP e dal nome di questo.</testo>
   </pergamena>
+
+  <pergamena>
+    <testo>Completare delle quest ti fornirà frammenti di memoria.</testo>
+  </pergamena>
   
   	<pergamenaTutorial>
       <nome>Cd</nome>
