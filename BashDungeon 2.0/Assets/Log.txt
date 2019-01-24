@@ -3011,3 +3011,24 @@ BASH DUGEON - LOGS
 
 BASH DUGEON - LOGS
 
+
+
+BASH DUGEON - LOGS
+
+1/24/2019 11:01:04 AM - quest added - "I tre cani hanno bis..."
+1/24/2019 11:01:36 AM - quest added - "Risolvi l'indovinell..."
+1/24/2019 11:02:00 AM - quest removed - "Risolvi l'indovinell..."
+1/24/2019 11:05:01 AM - quest removed - "I tre cani hanno bis..."
+1/24/2019 11:07:29 AM - quest added - "Porta una chiave nel..."
+1/24/2019 11:12:01 AM - quest added - "Elimina il barile ch..."
+1/24/2019 11:13:31 AM - quest removed - "Elimina il barile ch..."
+1/24/2019 11:18:20 AM - quest removed - "Porta una chiave nel..."
+1/24/2019 11:19:24 AM - scroll read - "Per terminare il gio..."
+
+
+BASH DUGEON - LOGS
+
+
+
+BASH DUGEON - LOGS
+

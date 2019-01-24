@@ -2214,6 +2214,7 @@ MonoBehaviour:
   - {fileID: 1038480627017988, guid: f2df6bb8c27af3540be369979bc4040f, type: 2}
   - {fileID: 1820104489385934, guid: 977d979976cabcb469dbd3056599cd00, type: 2}
   - {fileID: 1820104489385934, guid: c8614bd9522328a48bee08dcc5525df8, type: 2}
+  - {fileID: 1820104489385934, guid: c8a9a256ab258f645a0adb8bbde71950, type: 2}
   level1Prefab:
   - {fileID: 1735468461804488, guid: ce78f0720de59bc42955fd8d3198229a, type: 2}
   level2Prefab:
