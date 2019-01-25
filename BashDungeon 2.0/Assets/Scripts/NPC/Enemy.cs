@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour {
     Vector3 enemyPosition;
     public float m_Speed = 0.5f;
     bool isBlocked = false;
-    public float attackDamage = 10;
+    public float attackDamage;
     bool attackEnd = false;
 
 	// Use this for initialization
@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour {
         currentRoom = gameManager.GetComponent<LevelGeneration>().GetRoomByName(this.transform.parent.name);
         player = GameObject.Find("Player");
         enemyPosition = this.gameObject.transform.position;
+        attackDamage = 20;
         //m_agent = this.gameObject.GetComponent<NavMeshAgent>();
 	}
 	
